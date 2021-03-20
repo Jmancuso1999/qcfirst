@@ -1,3 +1,3 @@
 # qcfirst
 
-## Designed by James M., Zian K.
+## Designed by James Mancuso, Zian Khan
