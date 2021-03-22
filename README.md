@@ -35,6 +35,6 @@ Show img of BOTH screens (before and after) clicking drop courses -> explain how
 imgs here
 -->
 
-<p>When a user wants to obtain more information about a class, the box that contains the class is extended and the extended information is shown.</p>
+<p>When a user wants to obtain more information about a class, they click the box that contains the class they are interested in and it'll extend to show the rest of the information about the course.</p>
 
 ## Instructor Management Page
