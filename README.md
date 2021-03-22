@@ -17,7 +17,7 @@ Note: For mobile version, there is 2 screen states for the forgot username/passw
 
 ## Student Home Page 
 <!---
-Show img of BOTH screens (before and after clicking drop courses
+Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
 -->
 <p> When a student clicks the drop course button, a checklick pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button.</p>
 
