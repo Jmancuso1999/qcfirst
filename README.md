@@ -77,6 +77,8 @@ Show img of BOTH screens (before and after) clicking drop courses -> explain how
 ## Student Enrollment Page
 <p>When a user wants to obtain more information about a class, they click the box that contains the class they are interested in and it'll extend to show the rest of the information about the course.</p>
 
+<p>Note: When a class is full, the add button is removed so a student wouldn't have the oppourunity to join the class.</p>
+
 <!---
 Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
 
