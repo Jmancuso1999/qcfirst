@@ -7,7 +7,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 --> 
 
 ## Login Page
-<p></p>
+<p>Features: When a user logins, it redirects them to the home page. When a user forgets their password/username, it redirects them to the forgot password/username page. When a user wants to signup, it redirects them to the New Uer page.</p>
 
 <!---
 Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
