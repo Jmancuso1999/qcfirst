@@ -89,7 +89,7 @@ Show img of BOTH screens (before and after) clicking drop courses -> explain how
 -->
 
 ## Instructor Management Page
-<p></p>
+<p>Note: Margins for page will larger, we just wanted to show all the information that an instructor can provide when creating a course.</p>
 
 <!---
 Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
