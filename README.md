@@ -79,6 +79,8 @@ Show img of BOTH screens (before and after) clicking drop courses -> explain how
 
 <p>Note: When a class is full, the add button is removed so a student wouldn't have the oppourunity to join the class.</p>
 
+<p>For Mobile Version: Unlike the desktop and tablet version, the user will have the chance to show/hide filter. TO renenable or hide the filter, the user would click the filter button. </p>
+
 <!---
 Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
 
