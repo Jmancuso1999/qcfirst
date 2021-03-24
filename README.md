@@ -5,8 +5,8 @@
 <!--
 You and your partner should commit and push your visual designs to your GitHub repository (qcfirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
 --> 
-
-<p>Purpose: qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
+## Purpose:
+<p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
 
 
 ## Login Page
