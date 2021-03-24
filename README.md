@@ -58,12 +58,19 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopInstructorHomeDrop](./images/desktop/instructor_home2.png)
 
 
-<p></p>
-
-
+<p>Features: </p>
 
 ## Student Enrollment Page
-
+![mobileEnroll1](./images/mobile/student_enroll_filter.png)
+![mobileEnroll2](./images/mobile/student_enroll_nonfilter.png)
+![mobileEnroll3](./images/mobile/student_enroll_failed.png)
+![mobileEnroll4](./images/mobile/student_enroll_sucess.png)
+![tabletEnroll1](./images/tablet/student_enroll1.png)
+![tabletEnroll2](./images/tablet/student_enroll2.png)
+![tabletEnroll3](./images/tablet/student_enroll3.png)
+![desktopEnroll1](./images/desktop/student_enroll1.png)
+![desktopEnroll2](./images/desktop/student_enroll2.png)
+![desktopEnroll3](./images/desktop/student_enroll3.png)
 
 <p>When a user wants to obtain more information about a class, they click the box that contains the class they are interested in and it'll extend to show the rest of the information about the course.</p>
 
@@ -73,7 +80,12 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 
 ## Instructor Management Page
-
+![mobileEnroll](./images/mobile/instructor_enroll1.png)
+![mobileEnroll2](./images/mobile/instructor_enroll2.png)
+![tabletEnroll](./images/tablet/instructor_enroll1.png)
+![tabletEnroll2](./images/tablet/instructor_enroll2.png)
+![desktopEnroll](./images/desktop/instructor_1.png)
+![desktopEnroll2](./images/desktop/instructor_2.png)
 
 <p>Note: Margins for page will larger, we just wanted to show all the information that an instructor can provide when creating a course.</p>
 
