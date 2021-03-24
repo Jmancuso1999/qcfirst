@@ -42,7 +42,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopHome](./images/desktop/student_home.png)
 ![desktopHomeDrop](./images/desktop/student_home_drop.png)
 
-<p> When a student clicks the drop course button, a checklick pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button.</p>
+<p> Features: When a student clicks the drop course button, a checklick pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button.</p>
 
 <p>For the mobile version, the user has the same functionality, however, a problem we've considered is there may not be enough text space to display a students full course, so what we can is shorten the class name to display just the section and class number. (Consideration: Make it so a user can click on the class and it extends the schedule to display the rest of the information about the course).</p>
 
@@ -50,6 +50,12 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 
 ## Instructor Home Page
+![mobileInstructorHome](./images/mobile/instructor_home1.png)
+![mobileInstructorDrop](./images/mobile/instructor_home2.png)
+![tabletInstructorHome](./images/tablet/instructor_home1.png)
+![tabletInstructorHomeDrop](./images/tablet/instructor_home2.png)
+![desktopInstructorHome](./images/desktop/instructor_home1.png)
+![desktopInstructorHomeDrop](./images/desktop/instructor_home2.png)
 
 
 <p></p>
