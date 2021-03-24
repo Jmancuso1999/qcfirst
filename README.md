@@ -88,6 +88,4 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 <p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
 
-<p>Note: Margins for page will larger, we just wanted to show all the information that an instructor can provide when creating a course.</p>
-
 
