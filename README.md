@@ -7,30 +7,22 @@ You and your partner should commit and push your visual designs to your GitHub r
 --> 
 
 ## Login Page
+![mobileLogin](./images/mobile/login.png)
+![tabletLogin](./images/tablet/login.png)
+![desktopLogin](./images/desktop/login.png)
+
 <p>Features: When a user logins, it redirects them to the home page. When a user forgets their password/username, it redirects them to the forgot password/username page. When a user wants to signup, it redirects them to the New Uer page.</p>
-
-<!---
-Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
-
- - Desktop Version
- - Tablet Version
- - Mobile Version
-
--->
 
 
 ## Forgot User/Password Page
-<p></p>
+![mobileForgotUser](./images/mobile/forgot_username.png)
+![mobileForgotUser](./images/mobile/forgot_password.png)
+![tabletForgotUserPass](./images/tablet/forgot_user_password.png)
+![desktopForgotUserPass](./images/desktop/forgot_user_pass.png)
 
-<!---
-Show img of BOTH screens (before and after) clicking drop courses -> explain how it switches screen.
+<p>Features: </p>
 
- - Desktop Version
- - Tablet Version
- - Mobile Version
-
-Note: For mobile version, there is 2 screen states for the forgot username/password BUT they are on the same page, the user would just scroll down to find fill the forgot password information out. 
--->
+<p>Note: For mobile version, there is 2 screen states for the forgot username/password BUT they are on the same page, the user would just scroll down to find fill the forgot password information out. </p>
 
 ## New User Page
 
