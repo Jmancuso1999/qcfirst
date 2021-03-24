@@ -23,7 +23,6 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![tabletForgotUserPass](./images/tablet/forgot_user_password.png)
 ![desktopForgotUserPass](./images/desktop/forgot_user_pass.png)
 
-<p>Features: </p>
 
 <p>Note: For mobile version, there is 2 screen states for the forgot username/password BUT they are on the same page, the user would just scroll down to find fill the forgot password information out. </p>
 
@@ -31,9 +30,6 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![mobileNew](./images/mobile/create_user.png)
 ![tabletNew](./images/tablet/new_user.png)
 ![desktopNew](./images/desktop/new_user.png)
-
-<p></p>
-
 
 
 ## Student Home Page 
