@@ -41,7 +41,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopHome](./images/desktop/student_home.png)
 ![desktopHomeDrop](./images/desktop/student_home_drop.png)
 
-<p> Features: When a student clicks the drop course button, a checklick pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button. When a student clicks the add course button, it redirects them to the student enrollment page. </p>
+<p> Features: When a student clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button. When a student clicks the add course button, it redirects them to the student enrollment page. </p>
 
 <p>For the mobile version, the user has the same functionality, however, a problem we've considered is there may not be enough text space to display a students full course, so what we can is shorten the class name to display just the section and class number. (Consideration: Make it so a user can click on the class and it extends the schedule to display the rest of the information about the course).</p>
 
