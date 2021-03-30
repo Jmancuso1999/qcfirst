@@ -32,9 +32,6 @@ label[for="email"], label[for="password"] {
 label, input {
     margin: 5px;
     border-radius: 25px;
-}
-
-input {
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -42,6 +39,7 @@ input {
 input[type=submit] {
     background-color: rgba(46, 80, 255);
     width: 200px;
+    height: 30px;
     border: none;
     color: white;
     font-weight: bold;
@@ -51,8 +49,9 @@ input[type=submit] {
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
 
-    -  change ALL inputs AND buttons sizes
-    -  change the grey box surrounding the page size to contain all the elements in mobile form
+    -  changes ALL inputs AND buttons sizes
+    -  changes the grey box surrounding the page size to contain all the elements in mobile form
+    -  changes font size of the button  
 
 
 */
