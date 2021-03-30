@@ -26,13 +26,12 @@ label[for="email"], label[for="password"] {
 #email, #password {
     border: 1px solid rgb(70, 88, 255);
     display: inline-block;
+    width: 300px
 }
 
 label, input {
     margin: 5px;
-}
-
-input {
+    border-radius: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -40,10 +39,23 @@ input {
 input[type=submit] {
     background-color: rgba(46, 80, 255);
     width: 200px;
+    height: 30px;
     border: none;
-    border-radius: 25px;
     color: white;
     font-weight: bold;
 }
+
+/*
+
+ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
+
+    -  changes ALL inputs AND buttons sizes
+    -  changes the grey box surrounding the page size to contain all the elements in mobile form
+        - Width percentage should be > 50% at a certain screen width (try 75%)
+    -  changes font size of the button  
+
+
+*/
+
 
 /*------------------------------------------------------------------*/
