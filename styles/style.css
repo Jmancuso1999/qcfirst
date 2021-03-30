@@ -51,6 +51,7 @@ ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
 
     -  changes ALL inputs AND buttons sizes
     -  changes the grey box surrounding the page size to contain all the elements in mobile form
+        - Width percentage should be > 50% at a certain screen width (try 75%)
     -  changes font size of the button  
 
 
