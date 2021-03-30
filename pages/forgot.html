@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset = "UTF-8">
-    <title>Forgot User Password</title>
-    <link href="../styles/style.css" rel="stylesheet"> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset = "UTF-8">
+        <title>Forgot User Password</title>
+        <link href="../styles/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class = "logo">
 
+            </div>
+        </header>
 
+        <h2>Forgot Username</h2>
+        <div class="fUsernameContainer">
+            <form class = "forgotUsername" method="POST">
+                <div class = "userEmail">
+                    <label for ="fUserEmail">Email: </label>
+                    <input type="email" id="fUserEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*">
+                </div>
+                <div class="forgotUser">
+                    <label for = "forgotUserbtn"></label>
+                    <input type="submit" id="forgotUserbtn" name="forgotUserPass" value = "Submit">
+                </div>
+            </form>
+        </div>
+
+        <h2>Forgot Password</h2>
+        <div class="fPasswordContainer">
+            <form class = "ForgotPassword" method="POST">
+                <div class = "userEmail">
+                    <label for ="fPassEmail">Email: </label>
+                    <input type="email" id="fPassEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*">
+                </div>
+                <div class = "fUserPassword">
+                    <label for="fUserPassword">Password:</label>
+                    <input type="password" id="fUserPassword" name="userPass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
+                </div>
+                <div class="forgotUserConfirm">
+                    <label for="fUserPasswordConfirm">Confirm Password:</label>
+                    <input type="password" id="fUserPasswordConfirm" name="userPassConfirm" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
+                </div>
+                <div class="forgotPass">
+                    <label for = "forgotPassbtn"></label>
+                    <input type="submit" id="forgotPassbtn" name="forgotUserPass" value = "Submit">
+                </div>
+            </form>
+        </div>
+        <footer>
+
+        </footer>
+    </body>
 
 </html>
