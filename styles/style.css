@@ -23,7 +23,7 @@ label[for="email"], label[for="password"] {
     justify-content: left;
 }
 */
-#emailAddr, #userPass {
+#email, #password {
     border: 1px solid rgb(70, 88, 255);
     display: inline-block;
 }
