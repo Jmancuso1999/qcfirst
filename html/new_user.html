@@ -2,6 +2,71 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset = "UTF-8">
     <title>qcfirst login screen</title>
-    <link href="../css/style.css" rel="stylesheet"> 
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="../js/new_user.js" defer></script> 
 
+    <h2>New User Signup</h2>
+
+    <div class="flexbox-container">
+        <form class = "login" method="POST">
+            <div class = "logo">
+
+                <!-- IMAGE OF LOGO GOES HERE 
+
+                    Page utilizes a grid-based layout with styles making use of the flexbox layout or a framework like Bootstrap, Foundation, etc.
+                    If you're using Bootstrap or standard HTML/CSS: the rows and columns of the grid must be wrapped in an element with a container class.
+
+                    - NEED ATLEAST 4 IMAGES FOR EACH PAGE 
+                    - a h1/h2/etc header 
+                    - a paragrap of text on each PAGE
+                    - logo
+                
+                -->
+                
+            </div>
+            <div class = "name">
+                <label for="fullName"></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+            </div>
+            <div class = "userEmail">
+                <label for ="email"></label>
+                <input type="email" id="email" name="emailAddr" placeholder="Email Address" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*">
+            </div>
+            <div class = "userPassword">
+                <label for = "password"></label>
+                <input type="password" id="password" name="userPass" placeholder="Password">
+            </div>
+            <div class = "userName">
+                <label for="userN"></label>
+                <input type="text" id="userN" name="userN" placeholder="Username">
+            </div>
+            <div class = "birthday">
+                <select name="month" onchange="call()">
+                    <option value="">Month</option>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+                <select name="day">
+                    <option value="">Day</option>
+                </select>
+                <select name="year" onchange="call()">
+                    <option value="">Year</option>
+                </select>
+            </div>
+            <div class = "createAccount">
+                <label for = "submit"></label>
+                <input type="submit" id="submit" name="submit" value = "Submit">
+            </div>
+        </form>
+    </div>
 </html>
