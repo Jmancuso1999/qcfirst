@@ -71,6 +71,12 @@ address {
     margin: 10px 30px 10px 30px;
 }
 
+#daysOfClasses {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+}
+
 /*
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
