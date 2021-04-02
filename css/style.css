@@ -22,6 +22,10 @@ form {
     gap: 10px;
 }
 
+p {
+    color: rgb(124, 125, 129);
+}
+
 h2 {
     padding-bottom: 20px;
     text-align: center;
