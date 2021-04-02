@@ -58,6 +58,19 @@ input[type=submit] {
     font-weight: bold;
 }
 
+address {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#address, #contactInfo {
+    float: left;
+    position: relative;
+    left: -50%;
+    margin: 10px 30px 10px 30px;
+}
+
 /*
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
