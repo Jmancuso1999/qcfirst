@@ -1,4 +1,4 @@
-// Source to code/class:
+// Source to code/class was from a unknown user on https://knowledgecornor.blogspot.com/
 // https://knowledgecornor.blogspot.com/2013/08/birthday-dropdown-using-html-and-js.html
 
 function call(){
