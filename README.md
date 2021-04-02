@@ -52,7 +52,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![tabletInstructorHome](./img/tablet/instructor_home1.png)
 ![tabletInstructorHomeDrop](./img/tablet/instructor_home2.png)
 ![desktopInstructorHome](./img/desktop/instructor_home1.png)
-![desktopInstructorHomeDrop](./images/desktop/instructor_home2.png)
+![desktopInstructorHomeDrop](./img/desktop/instructor_home2.png)
 
 
 <p> Features: When a instructor clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button. When a instructor clicks the create course button, it redirects them to the instructor management page. </p>
