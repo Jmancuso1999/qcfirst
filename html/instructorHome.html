@@ -31,17 +31,30 @@
         </header>
 
         <div class="flexbox-container">
-            <!-- Instructor's Class Schedule goes here (at most 5 or 6 classes allowed) -->
+            <form>
+                <!-- Instructor's Class Schedule goes here (at most 5 or 6 classes allowed) -->
+                <h2>Class Schedule</h2>
+                <p id="courseOne">Course #1</p>
+                <p id="courseTwo">Course #2</p>
+                <p id="courseThree">Course #3</p>
+                <p id="courseFour">Course #4</p>
+                <p id="courseFive">Course #5</p>
+                <p id="courseSix">Course #6</p>
 
 
+                <!-- Add Course Button goes here - (Takes them to the Instructor enrollment page) -->
+                <div class = "addCourse">
+                    <label for = "addCourse"></label>
+                    <input type="button" id="addCourse" name="addCourse" value = "Add Course">
+                </div>
+                <!-- Drop Course Button goes here - (Clicking this button adds checkboxes next to each course) -->
+                <div class = "dropCourse">
+                    <label for = "dropCourse"></label>
+                    <input type="button" id="dropCourse" name="dropCourse" value = "Drop Course">
+                </div>
 
-            <!-- Add Course Button goes here - (Takes them to the Instructor enrollment page) -->
-
-
-
-            <!-- Drop Course Button goes here - (Clicking this button adds checkboxes next to each course) -->
-            <!-- Add course button and Drop Course button both gets removed and only a "confirm drop" btn appears-->
-
+                <!-- Add course button and Drop Course button both gets removed and only a "confirm drop" btn appears-->
+            </form>
         </div>
 
         <footer>

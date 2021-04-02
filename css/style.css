@@ -50,7 +50,7 @@ label, input {
 }
 
 input[type=submit] {
-    background-color: rgba(46, 80, 255);
+    background-color: rgb(46, 80, 255);
     width: 200px;
     height: 30px;
     border: none;
