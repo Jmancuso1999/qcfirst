@@ -29,13 +29,99 @@
                 </nav>
             </div>
         </header>
-
+        <!-- Create Course container that requires user to input course #, course name, department,
+                        instructor name, days and times of classes, capacity, semester, and description
+                        -->
         <div class="flexbox-container">
-
-            <!-- Create Course container that requires user to input course #, course name, department,
-                            instructor name, days and times of classes, capacity, semester, and description
-                            -->
-
+            <form>
+                <h2>Create Course</h2>
+                <div id="courseName">
+                    <div id="courseLabel">
+                        <label for ="courseN">Course Name:</label>
+                    </div>
+                    <input type="text" id="courseN" name="courseN" placeholder="">
+                </div>
+                <div id="department">
+                    <div id="departmentLabel">
+                        <label for ="depart">Department:</label>
+                    </div>
+                    <input type="text" id="depart" name="depart" placeholder="">
+                </div>
+                <div id="uniqueNumber">
+                    <label for ="uniqueNum">Course Number:</label>
+                    <input type="text" id="uniqueNum" name="uniqueNum" placeholder="">
+                </div>
+                <div id="instructor">
+                    <div id="instructorLabel">
+                        <label for ="instruct">Instructor:</label>
+                    </div>
+                    <input type="text" id="instruct" name="instruct" placeholder="">
+                </div>
+                <div id="capacity">
+                    <label for ="capacityNum">Capacity:</label>
+                    <input type="number" id="capacityNum" name="capacityCount" placeholder="">
+                </div>
+                <div id="daysOfClasses">
+                    <div id="day1">
+                        <label for ="mon">
+                            <input type="checkbox" id="mon" name="mon"><br>
+                            Mon
+                        </label>
+                    </div>
+                    <div id="day2">
+                        <label for ="tues">
+                            <input type="checkbox" id="tues" name="tues"><br>
+                            Tues
+                        </label>
+                    </div>
+                    <div id="day3">
+                        <label for ="wed">
+                            <input type="checkbox" id="wed" name="wed"><br>
+                            Wed
+                        </label>
+                    </div>
+                    <div id="day4">
+                        <label for ="thurs">
+                            <input type="checkbox" id="thurs" name="thurs"><br>
+                            Thurs
+                        </label>
+                    </div>
+                    <div id="day5">
+                        <label for ="fri">
+                            <input type="checkbox" id="fri" name="fri"><br>
+                            Fri
+                        </label>
+                    </div>
+                    <div id="day6">
+                        <label for ="sat">
+                            <input type="checkbox" id="sat" name="sat"><br>
+                            Sat
+                        </label>
+                    </div>
+                    <div id="day7">
+                        <label for ="sun">
+                            <input type="checkbox" id="sun" name="sun"><br>
+                            Sun
+                        </label>
+                    </div>
+                </div>
+                <div id="timeOfClass">
+                    <label for ="classTime">Time of Class:</label>
+                    <input type="time" id="classTime" name="classTime" placeholder="">
+                </div>
+                <div id="semester">
+                    <label for ="searchSem">Semester:</label>
+                    <input type="text" id="searchSem" name="searchSem" placeholder="">
+                </div>
+                <div id="description">
+                    <label for ="desc">Description:</label>
+                    <input type="text" id="desc" name="classDesc" placeholder="">
+                </div>
+                <div class = "createCourse">
+                    <label for = "createCourseBtn"></label>
+                    <input type="button" id="createCourseBtn" name="createNewClass" value = "Submit">
+                </div>
+            </form>
         </div>
 
         <footer>
