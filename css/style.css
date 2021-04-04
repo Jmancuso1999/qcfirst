@@ -1,11 +1,25 @@
 /*
-index.html styling
+Global styling
 */
+
 header {
     margin: 0px;
     padding: 15px;
     text-align: center;
 }
+
+#address, #contactInfo {
+    float: left;
+    position: relative;
+    left: -50%;
+    margin: 10px 30px 10px 30px;
+}
+
+/*------------------------------------------------------------------*/
+
+/*
+index.html styling
+*/
 .flexbox-container {
     text-align: center;
     display: flex;
@@ -64,13 +78,6 @@ address {
     left: 50%;
 }
 
-#address, #contactInfo {
-    float: left;
-    position: relative;
-    left: -50%;
-    margin: 10px 30px 10px 30px;
-}
-
 #daysOfClasses {
     display: grid;
     grid-auto-flow: column;
@@ -91,3 +98,37 @@ ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
 
 
 /*------------------------------------------------------------------*/
+
+/*
+studentEnroll.html
+*/
+
+#sideBar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 100px;
+}
+
+#or p {
+    display: flex;
+    flex-direction: row;
+}
+
+#or p:before, #or p:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;  
+}
+
+#or p:before {
+    margin-right: 10px;
+}
+
+#or p:after {
+    margin-left: 10px;
+}
