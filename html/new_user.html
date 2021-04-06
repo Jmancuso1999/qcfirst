@@ -30,22 +30,22 @@
             <form class = "login" method="POST">
                 <div class = "name">
                     <label for="fullName"></label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
                 </div>
                 <div class = "userEmail">
                     <label for ="email"></label>
-                    <input type="email" id="email" name="emailAddr" placeholder="Email Address" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*">
+                    <input type="email" id="email" name="emailAddr" placeholder="Email Address" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
                 </div>
                 <div class = "userPassword">
                     <label for = "password"></label>
-                    <input type="password" id="password" name="userPass" placeholder="Password">
+                    <input type="password" id="password" name="userPass" placeholder="Password" required>
                 </div>
                 <div class = "userName">
                     <label for="userN"></label>
-                    <input type="text" id="userN" name="userN" placeholder="Username">
+                    <input type="text" id="userN" name="userN" placeholder="Username" required>
                 </div>
                 <div class = "birthday">
-                    <select name="month" onchange="call()">
+                    <select name="month" onchange="call()" required>
                         <option value="">Month</option>
                         <option value="1">Jan</option>
                         <option value="2">Feb</option>
@@ -60,10 +60,10 @@
                         <option value="11">Nov</option>
                         <option value="12">Dec</option>
                     </select>
-                    <select name="day">
+                    <select name="day" required>
                         <option value="">Day</option>
                     </select>
-                    <select name="year" onchange="call()">
+                    <select name="year" onchange="call()" required>
                         <option value="">Year</option>
                     </select>
                 </div>

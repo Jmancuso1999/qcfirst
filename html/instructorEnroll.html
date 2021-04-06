@@ -39,13 +39,13 @@
                     <div id="courseLabel">
                         <label for ="courseN">Course Name:</label>
                     </div>
-                    <input type="text" id="courseN" name="courseN" placeholder="">
+                    <input type="text" id="courseN" name="courseN" placeholder="" required>
                 </div>
                 <div id="department">
                     <div id="departmentLabel">
                         <label for ="depart">Department:</label>
                     </div>
-                    <input type="text" id="depart" name="depart" placeholder="">
+                    <input type="text" id="depart" name="depart" placeholder="" required>
                 </div>
                 <div id="uniqueNumber">
                     <label for ="uniqueNum">Course Number:</label>
@@ -59,7 +59,7 @@
                 </div>
                 <div id="capacity">
                     <label for ="capacityNum">Capacity:</label>
-                    <input type="number" id="capacityNum" name="capacityCount" placeholder="">
+                    <input type="number" id="capacityNum" name="capacityCount" placeholder="" required>
                 </div>
                 <div id="daysOfClasses">
                     <div id="day1">
@@ -107,19 +107,27 @@
                 </div>
                 <div id="timeOfClass">
                     <label for ="classTime">Time of Class:</label>
-                    <input type="time" id="classTime" name="classTime" placeholder="">
+                    <input type="time" id="classTime" name="classTime" placeholder="" required>
                 </div>
                 <div id="semester">
                     <label for ="searchSem">Semester:</label>
-                    <input type="text" id="searchSem" name="searchSem" placeholder="">
+                    <select name="terms" id="searchSem" required>
+                        <option value="Spring 2021">Spring 2021</option>
+                        <option value="Summer 2021">Summer 2021</option>
+                        <option value="Fall 2021">Fall 2021</option>
+                    </select>
+                </div>
+                <div id="enrollmentDeadline">
+                    <label for="enrollDeadline">Enrollment Deadline:</label>
+                    <span id="enrollDeadline">automatically generated</span>
                 </div>
                 <div id="description">
                     <label for ="desc">Description:</label>
-                    <input type="text" id="desc" name="classDesc" placeholder="">
+                    <textarea id="desc" name="classDesc" rows="5" cols="40" placeholder="brief description of your new course.."></textarea>
                 </div>
                 <div class = "createCourse">
                     <label for = "createCourseBtn"></label>
-                    <input type="button" id="createCourseBtn" name="createNewClass" value = "Submit">
+                    <input type="submit" id="createCourseBtn" name="createNewClass" value = "Create Course">
                 </div>
             </form>
         </div>
