@@ -48,6 +48,9 @@ h2 {
 label[for="email"], label[for="password"] {
     justify-content: left;
 }
+
+input[type=text]
+
 */
 #email, #password, #fullName, #userN {
     border: 1px solid rgb(70, 88, 255);
