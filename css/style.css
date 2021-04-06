@@ -111,9 +111,14 @@ ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
 studentEnroll.html
 */
 
+.studentEnroll-flexbox {
+    margin: 20px 0;
+    padding: 10px;
+    display: flex;
+}
+
 #sideBar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
@@ -128,7 +133,7 @@ studentEnroll.html
 
 #or p:before, #or p:after {
     content: "";
-    flex: 1 1;
+    flex: 1;
     border-bottom: 1px solid;
     margin: auto;  
 }
@@ -139,4 +144,32 @@ studentEnroll.html
 
 #or p:after {
     margin-left: 10px;
+}
+
+#availableClasses {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#class {
+    width: 70%;
+    height: 30%;
+    border: 1px solid #000;
+    margin: 10px auto;
+    padding: 5px 5px;
+}
+
+#classFont {
+    font: Arial;
+    color: black;
+    font-weight: bold;
+}
+
+#addClass {
+    width: 50px; 
+    float: right;
+    right: 0;
 }

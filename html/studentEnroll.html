@@ -32,12 +32,11 @@
         </header>
 
         <div class="studentEnroll-flexbox">
-
-            <!-- Side Bar that filters search -->
-            <!-- includes: search bar, semester, unique #, course name, department, instructor name,
-                            days of classes, and checkboxes for showing open classes only and
-                            not passing enrollment deadline
-                                                                -->
+            <!-- Side Bar that filters search includes: search bar, 
+                semester, unique #, course name, department, instructor name,
+                days of classes, and checkboxes for showing open classes only and
+                not passing enrollment deadline
+             -->
             <div id="sideBar">
                 <div id="searchBar">
                     <label for ="search"></label>
@@ -117,10 +116,23 @@
                     </div>
                 </div>
             </div>
-            <!-- Section that displays search/filter results-->
-            <!-- If class is not full, a "ADD" button will be displayed for that class -->
+            <!-- Section that displays search/filter results
+             If class is not full, a "ADD" button will be displayed for that class.
+             If there are class(es) available, then each class will have an inner div
+            -->
             <div id="availableClasses">
-
+                <div id="class">
+                    <p id = "classFont">CS 355 - Mark Abramov</p>
+                    <p id = "classFont">Tueday/Thursday 1:40pm - 2:55pm</p>
+                    <label for = "addClass"></label>
+                    <input type="submit" id="addClass" name="addClass" value = "Add">
+                </div>
+                <div id="class">
+                    <p id = "classFont">CS 355 - Mark Abramov</p>
+                    <p id = "classFont">Tueday/Thursday 3:10pm - 4:25pm</p>
+                    <label for = "addClass"></label>
+                    <input type="submit" id="addClass" name="addClass" value = "Add">
+                </div>
             </div>
         </div>
 
