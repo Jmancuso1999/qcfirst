@@ -97,6 +97,16 @@ address {
     grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 }
 
+#loginImages {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+img {
+    padding: 10px;
+}
+
 /*
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
