@@ -9,6 +9,25 @@ You and your partner should commit and push your visual designs to your GitHub r
 <p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
 
 
+## Contributions (Pages worked/completed)
+
+### James 
+  - index.html   
+  - new_user.html 
+  - studentEnroll.html 
+  - new_user.js
+
+### Zian
+  - forgot.html
+  - instructorEnroll.html
+  - instructorHome.html
+  - studentHome.html
+
+### Both
+  - Header
+  - Footer
+  - style.css
+
 ## Login Page
 ![mobileLogin](./img/mobile/login.png)
 ![tabletLogin](./img/tablet/login.png)
