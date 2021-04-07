@@ -97,7 +97,7 @@ address {
     grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 }
 
-#loginImages {
+#images {
     display: flex;
     justify-content: center;
     margin: auto;
@@ -133,7 +133,7 @@ studentEnroll.html
 }
 
 #sideBar {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
+    height: 100%; 
     z-index: 1; /* Stay on top */
     left: 0;
     overflow-y: hidden; /* Disable horizontal scroll */
