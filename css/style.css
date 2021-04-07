@@ -168,7 +168,7 @@ studentEnroll.html
     flex-direction: column;
 }
 
-#class {
+.classB {
     width: 70%;
     height: 30%;
     border: 1px solid #000;
@@ -176,13 +176,13 @@ studentEnroll.html
     padding: 5px 5px;
 }
 
-#classFont {
+.classFont {
     font: Arial;
     color: black;
     font-weight: bold;
 }
 
-#addClass {
+#addClass1, #addClass2 {
     width: 50px; 
     float: right;
     right: 0;
