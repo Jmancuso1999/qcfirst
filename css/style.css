@@ -7,6 +7,9 @@ header {
     padding: 15px;
     text-align: center;
 }
+body{
+    height: 100%;
+}
 
 #address, #contactInfo {
     float: left;
@@ -16,12 +19,22 @@ header {
 }
 footer {
     width: 100%;
-    position: fixed;
+    height: 60px;
+    position: absolute;
     bottom: 0;
 }
 
 .logo {
     float: left;
+}
+#images {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+img {
+    padding: 10px;
 }
 
 /*------------------------------------------------------------------*/
@@ -97,16 +110,6 @@ address {
     grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 }
 
-#images {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-img {
-    padding: 10px;
-}
-
 /*
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
@@ -177,7 +180,7 @@ studentEnroll.html
 }
 
 .classFont {
-    font: Arial;
+    font-family: Arial, serif;
     color: black;
     font-weight: bold;
 }
