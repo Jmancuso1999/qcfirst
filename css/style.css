@@ -46,6 +46,11 @@ index.html styling
 .flexbox-container {
     text-align: center;
     display: flex;
+    /*
+    flex-wrap: wrap;
+    
+    TRY ON ALL PAGES
+    */
     justify-content: center;
     margin:50px;
     padding: 5px;

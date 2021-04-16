@@ -4,17 +4,34 @@
         <meta charset = "UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
         <title>Student Home Page</title>
         <link href="../css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
         <script src="../js/new_user.js" defer></script>
     </head>
     <body>
         <header>
-            <div class = "logo">
-                <a href="/studentHome.html"></a><img src="../img/logo.jpg" alt="QC Logo"></a>
-            </div>
             <div id="menuBar">
-                <nav>
-                    <a href="studentHome.html">Home</a> &nbsp;
-                    <a href="studentEnroll.html">Student Enrollment</a>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/studentHome.html"></a><img src="../img/logo.jpg" alt="QC Logo"></a>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a href="studentHome.html" class="navbar-item">Home</a> &nbsp;
+                            <a href="studentEnroll.html" class="navbar-item">Student Enroll</a> 
+                        </div>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-light">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
