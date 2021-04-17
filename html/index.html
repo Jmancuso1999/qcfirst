@@ -13,7 +13,7 @@
             <div id="menuBar">
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="/instructorHome.html"></a><img src="../img/logo.jpg" alt="QC Logo"></a>
+                        <a class="navbar-item" href="instructorHome.html"></a><img src="../img/logo.jpg" alt="QC Logo">
                         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -24,28 +24,30 @@
             </div>
         </header>
         <div class="flexbox-container">
-            <form class = "login" method="POST">
-                <h2>Login</h2>
+            <form class = "box" method="POST">
+                <h2 class="title">Login</h2>
                 <p>Welcome Fellow Instructors and Students!</p>
                 <div class = "userEmail">
-                    <label for ="email"></label>
-                    <input type="email" id="email" name="emailAddr" placeholder="Email Address" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
+                    <label class="label" for ="email">Username</label>
+                    <input class="input" type="email" id="email" name="emailAddr" placeholder="Email Address" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
                 </div>
                 <div class = "userPassword">
-                    <label for = "password"></label>
-                    <input type="password" id="password" name="userPass" placeholder="Password" required>
+                    <label class="label" for = "password">Password</label>
+                    <input class="input" type="password" id="password" name="userPass" placeholder="Password" required>
                 </div>
                 <div class = "loginConfirm">
                     <label for = "submit"></label>
-                    <input type="submit" id="submit" name="submit" value = "Login">
+                    <input class="button is-small is-rounded" type="submit" id="submit" name="submit" value = "Login">
                 </div>
-                <div class = "create">
-                    <label for = "submit"></label>
-                    <input type="submit" id="createAcct" name="createAcct" value = "Create Account">
-                </div>
-                <div class = "forgot">
-                    <label for = "submit"></label>
-                    <input type="submit" id="forgotUserPass" name="forgotUserPass" value = "Forgot Username/Password">
+                <div class="field is-grouped">
+                    <div class = "create">
+                        <label for = "submit"></label>
+                        <input class="button is-small is-rounded" type="submit" id="createAcct" name="createAcct" value = "Create Account">
+                    </div>
+                    <div class = "forgot">
+                        <label for = "submit"></label>
+                        <input class="button is-small is-rounded" type="submit" id="forgotUserPass" name="forgotUserPass" value = "Forgot Username/Password">
+                    </div>
                 </div>
             </form>
         </div>
@@ -57,7 +59,7 @@
                 <img src="../img/home2.jpg" alt="Login Image #2">
             </div>
         </div>
-        <footer>
+        <footer class="footer">
             <address>
                 <div id="address">
                     <p>Queens College, CUNY</p>
