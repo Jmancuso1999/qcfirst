@@ -54,6 +54,7 @@ index.html styling
     justify-content: center;
     margin:50px;
     padding: 5px;
+
 }
 
 form {
@@ -105,6 +106,9 @@ input[type=submit] {
 }
 .loginConfirm{
     margin-top: 10px;
+}
+#loginBtns{
+    width: 100%;
 }
 
 address {

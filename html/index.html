@@ -35,18 +35,20 @@
                     <label class="label" for = "password">Password</label>
                     <input class="input" type="password" id="password" name="userPass" placeholder="Password" required>
                 </div>
-                <div class = "loginConfirm">
-                    <label for = "submit"></label>
-                    <input class="button is-small is-rounded" type="submit" id="submit" name="submit" value = "Login">
-                </div>
-                <div class="field is-grouped">
-                    <div class = "create">
+                <div id="loginBtns">
+                    <div class = "loginConfirm">
                         <label for = "submit"></label>
-                        <input class="button is-small is-rounded" type="submit" id="createAcct" name="createAcct" value = "Create Account">
+                        <input class="button is-small is-rounded" type="submit" id="submit" name="submit" value = "Login">
                     </div>
-                    <div class = "forgot">
-                        <label for = "submit"></label>
-                        <input class="button is-small is-rounded" type="submit" id="forgotUserPass" name="forgotUserPass" value = "Forgot Username/Password">
+                    <div class="field is-grouped">
+                        <div class = "create">
+                            <label for = "submit"></label>
+                            <input class="button is-small is-rounded" type="submit" id="createAcct" name="createAcct" value = "Create Account">
+                        </div>
+                        <div class = "forgot">
+                            <label for = "submit"></label>
+                            <input class="button is-small is-rounded" type="submit" id="forgotUserPass" name="forgotUserPass" value = "Forgot Username/Password">
+                        </div>
                     </div>
                 </div>
             </form>
