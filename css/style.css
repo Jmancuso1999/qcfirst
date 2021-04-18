@@ -7,6 +7,7 @@ header {
     padding: 15px;
     text-align: center;
 }
+
 body{
     height: 100%;
 }
@@ -24,13 +25,13 @@ footer {
     position: relative;
     bottom: 0;
 }
-
+/*
 #images {
     display: flex;
     justify-content: center;
     margin: auto;
 }
-
+*/
 img {
     padding: 10px;
 }
@@ -160,7 +161,6 @@ studentEnroll.html
     z-index: 1; /* Stay on top */
     left: 0;
     overflow-y: hidden; /* Disable horizontal scroll */
-    padding-top: 100px;
 }
 
 #or p {
