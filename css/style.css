@@ -12,6 +12,7 @@ body{
 }
 
 #address, #contactInfo {
+    display: flex;
     float: left;
     position: relative;
     left: -50%;
@@ -24,9 +25,6 @@ footer {
     bottom: 0;
 }
 
-.logo {
-    float: left;
-}
 #images {
     display: flex;
     justify-content: center;
@@ -43,6 +41,15 @@ img {
 index.html styling
 */
 
+form {
+    border: 1px solid;
+    justify-content: center;
+}
+
+.is-flex {
+    justify-content: center;
+}
+
 .flexbox-container {
     text-align: center;
     display: flex;
@@ -50,13 +57,13 @@ index.html styling
     flex-wrap: wrap;
     
     TRY ON ALL PAGES
-    */
+    
     justify-content: center;
     margin:50px;
     padding: 5px;
-
+    */
 }
-
+/*
 form {
     border: 1px solid;
     background-color: #aaa;
@@ -80,7 +87,7 @@ label[for="email"], label[for="password"] {
 
 input[type=text]
 
-*/
+
 #email, #password, #fullName, #userN {
     border: 1px solid rgb(70, 88, 255);
     display: inline-block;
@@ -122,7 +129,7 @@ address {
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 }
-
+*/
 /*
 
 ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
