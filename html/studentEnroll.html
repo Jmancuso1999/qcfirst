@@ -10,20 +10,26 @@
     <body>
         <header>
             <div id="menuBar">
-                <div class="navbar-brand" role="navigation" aria-label="main navigation">
-                    <a class="navbar-item" href="studentHome.html"></a><img src="../img/logo.jpg" alt="QC Logo">
-                </div>
-                <div class="navbar-menu is-active">
-                    <div class="navbar-start">
-                        <a href="studentHome.html" class="navbar-item">Home</a> &nbsp;
-                        <a href="studentEnroll.html" class="navbar-item">Student Enroll</a> 
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="studentHome.html"></a><img src="../img/logo.jpg" alt="QC Logo">
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        </a>
                     </div>
-                </div>
-                <div class="navbar-end">
-                    <div class="buttons">
-                        <a class="button is-light">Log Out</a>
+                    <div class="navbar-menu is-active" id = "nav-links">
+                        <div class="navbar-start">
+                            <a href="studentHome.html" class="navbar-item">Home</a> &nbsp;
+                            <a href="studentEnroll.html" class="navbar-item">Student Enroll</a> 
+                        </div>
                     </div>
-                </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-light">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </header>
 
@@ -140,16 +146,12 @@
             </div>
         </div>
         <footer class="footer">
-            <address>
-                <div id="address">
-                    <p>Queens College, CUNY</p>
-                    <p>65-30 Kissena Blvd.</p>
-                    <p>Queens, NY 11367-1597</p>
-                </div>
-                <div id="contactInfo">
-                    <p>Phone: (718) 997-5000</p>
-                </div>
-            </address>
-        </footer>
+            <div class="content has-text-centered">         
+                <p>Queens College, CUNY</p>
+                <p>65-30 Kissena Blvd.</p>
+                <p>Queens, NY 11367-1597</p>
+                <p>Phone: (718) 997-5000</p>
+            </div>
+          </footer>
     </body>
 </html>
