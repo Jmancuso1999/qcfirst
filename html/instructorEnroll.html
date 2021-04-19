@@ -36,101 +36,114 @@
         <!-- Create Course container that requires user to input course #, course name, department,
                         instructor name, days and times of classes, capacity, semester, and description
                         -->
-        <div class="flexbox-container">
-            <form>
-                <h2>Create Course</h2>
+        <h2 class="title has-text-centered">Create Course</h2>
+        <div class="container">
+            <form class = "box">
                 <div id="courseName">
                     <div id="courseLabel">
-                        <label for ="courseN">Course Name:</label>
+                        <label class="label" for ="courseN">Course Name:</label>
                     </div>
-                    <input type="text" id="courseN" name="courseN" placeholder="" required>
+                    <input class="input" type="text" name="courseN" placeholder="" required>
                 </div>
                 <div id="department">
                     <div id="departmentLabel">
-                        <label for ="depart">Department:</label>
+                        <label class="label" for ="depart">Department:</label>
                     </div>
-                    <input type="text" id="depart" name="depart" placeholder="" required>
+                    <input type="text" class="input" name="depart" placeholder="" required>
                 </div>
                 <div id="uniqueNumber">
-                    <label for ="uniqueNum">Course Number:</label>
-                    <input type="text" id="uniqueNum" name="uniqueNum" placeholder="">
+                    <label class="label" for ="uniqueNum">Course Number:</label>
+                    <input type="text" class="input" name="uniqueNum" placeholder="">
                 </div>
                 <div id="instructor">
                     <div id="instructorLabel">
-                        <label for ="instruct">Instructor:</label>
+                        <label class="label" for ="instruct">Instructor:</label>
                     </div>
-                    <input type="text" id="instruct" name="instruct" placeholder="">
+                    <input type="text" class="input" name="instruct" placeholder="">
                 </div>
                 <div id="capacity">
-                    <label for ="capacityNum">Capacity:</label>
-                    <input type="number" id="capacityNum" name="capacityCount" placeholder="" required>
+                    <label class="label" for ="capacityNum">Capacity:</label>
+                    <input type="number" class="input" name="capacityCount" placeholder="" min = 0 required>
                 </div>
-                <div id="daysOfClasses">
-                    <div id="day1">
-                        <label for ="mon">
+                <div class="level is-mobile mt-1">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="mon">
                             <input type="checkbox" id="mon" name="mon"><br>
                             Mon
                         </label>
                     </div>
-                    <div id="day2">
-                        <label for ="tues">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="tues">
                             <input type="checkbox" id="tues" name="tues"><br>
                             Tues
                         </label>
                     </div>
-                    <div id="day3">
-                        <label for ="wed">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="wed">
                             <input type="checkbox" id="wed" name="wed"><br>
                             Wed
                         </label>
                     </div>
-                    <div id="day4">
-                        <label for ="thurs">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="thurs">
                             <input type="checkbox" id="thurs" name="thurs"><br>
                             Thurs
                         </label>
                     </div>
-                    <div id="day5">
-                        <label for ="fri">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="fri">
                             <input type="checkbox" id="fri" name="fri"><br>
                             Fri
                         </label>
                     </div>
-                    <div id="day6">
-                        <label for ="sat">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="sat">
                             <input type="checkbox" id="sat" name="sat"><br>
                             Sat
                         </label>
                     </div>
-                    <div id="day7">
-                        <label for ="sun">
+                    <div class="level-item has-text-centered">
+                        <label class = "checkbox label" for ="sun">
                             <input type="checkbox" id="sun" name="sun"><br>
                             Sun
                         </label>
                     </div>
                 </div>
                 <div id="timeOfClass">
-                    <label for ="classTime">Time of Class:</label>
-                    <input type="time" id="classTime" name="classTime" required>
+                    <label class = "label" for ="classTime">Time of Class:</label>
+                    <input type="time" class="control" name="classTime" required>
                 </div>
-                <div id="semester">
-                    <label for ="searchSem">Semester:</label>
-                    <select name="terms" id="searchSem">
+                <div class = "mt-1" id="semester">
+                    <label class = "label" for ="searchSem">Semester:</label>
+                    <select name="terms" class="control">
                         <option value="Spring 2021">Spring 2021</option>
                         <option value="Summer 2021">Summer 2021</option>
                         <option value="Fall 2021">Fall 2021</option>
                     </select>
                 </div>
-                <div id="enrollmentDeadline">
+                <div class = "label mt-1" id="enrollmentDeadline">
                     <p>Enrollment Deadline: automatically generated</p>
                 </div>
-                <div id="description">
-                    <label for ="desc">Description:</label>
-                    <textarea id="desc" name="classDesc" rows="5" cols="40" placeholder="brief description of your new course.."></textarea>
+                <div class="field">
+                    <label class = "label" for ="desc">Description:</label>
+                    <div class="control">
+                        <textarea id="desc" name="classDesc" rows="5" cols="40" placeholder="brief description of your new course.."></textarea>
+                    </div>
                 </div>
+
+
+                <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                      <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                  </div>
+
+
+
                 <div class = "createCourse">
                     <label for = "createCourseBtn"></label>
-                    <input type="submit" id="createCourseBtn" name="createNewClass" value = "Create Course">
+                    <input class="button is-small is-rounded is-black" type="submit" id="createCourseBtn" name="createNewClass" value = "Create Course">
                 </div>
             </form>
         </div>
