@@ -155,17 +155,8 @@ ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
 studentEnroll.html
 */
 
-.studentEnroll-flexbox {
-    margin: 10px 0;
-    padding: 10px;
-    display: flex;
-}
-
 #sideBar {
-    height: 100%; 
-    z-index: 1; /* Stay on top */
-    left: 0;
-    overflow-y: hidden; /* Disable horizontal scroll */
+    border-color: black;
 }
 
 #or p {
@@ -187,7 +178,7 @@ studentEnroll.html
 #or p:after {
     margin-left: 10px;
 }
-
+/*
 #availableClasses {
     flex: 1;
     margin: 10px;
@@ -215,3 +206,4 @@ studentEnroll.html
     float: right;
     right: 0;
 }
+*/

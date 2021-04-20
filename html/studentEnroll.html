@@ -32,116 +32,124 @@
                 </nav>
             </div>
         </header>
-
-        <div class="studentEnroll-flexbox">
-            <!-- Side Bar that filters search includes: search bar, 
-                semester, unique #, course name, department, instructor name,
-                days of classes, and checkboxes for showing open classes only and
-                not passing enrollment deadline
-             -->
-            <div id="sideBar">
-                <div id="searchBar">
-                    <label for ="search"></label>
-                    <input type="text" id="search" name="searchClass" placeholder="Search">
-                </div>
-                <div id="or">
-                    <p>OR</p>
-                </div>
-                <div id="semester">
-                    <label for ="searchSem">Semester:</label>
-                    <input type="text" id="searchSem" name="searchSem" placeholder="">
-                </div>
-                <div id="uniqueNumber">
-                    <label for ="uniqueNum">Unique Number:</label>
-                    <input type="text" id="uniqueNum" name="uniqueNum" placeholder="">
-                </div>
-                <div id="courseName">
-                    <div id="courseLabel">
-                        <label for ="courseN">Course Name:</label>
+        <div id = "divider">
+            <div class="is-flex ml-2">
+                <!-- Side Bar that filters search includes: search bar, 
+                    semester, unique #, course name, department, instructor name,
+                    days of classes, and checkboxes for showing open classes only and
+                    not passing enrollment deadline
+                -->
+                <div id="sideBar">
+                    <div id="searchBar">
+                        <label for ="search"></label>
+                        <input type="text" id="search" name="searchClass" placeholder="Search">
                     </div>
-                    <input type="text" id="courseN" name="courseN" placeholder="">
-                </div>
-                <div id="department">
-                    <div id="departmentLabel">
-                        <label for ="depart">Department:</label>
+                    <div id="or">
+                        <p>OR</p>
                     </div>
-                    <input type="text" id="depart" name="depart" placeholder="">
-                </div>
-                <div id="instructor">
-                    <div id="instructorLabel">
-                        <label for ="instruct">Instructor:</label>
+                    <div id="semester">
+                        <div id = "searchSem">
+                            <label for ="searchSem">Semester:</label>
+                        </div>
+                        <input type="text" id="searchSem" name="searchSem" placeholder="">
                     </div>
-                    <input type="text" id="instruct" name="instruct" placeholder="">
-                </div>
-                <div id="daysOfClasses">
-                    <div id="day1">
-                        <label for ="mon">
-                            <input type="checkbox" id="mon" name="mon"><br>
-                            Mon
-                        </label>
+                    <div id="uniqueNumber">
+                        <label for ="uniqueNum">Unique Number:</label>
+                        <input type="text" id="uniqueNum" name="uniqueNum" placeholder="">
                     </div>
-                    <div id="day2">
-                        <label for ="tues">
-                            <input type="checkbox" id="tues" name="tues"><br>
-                            Tues
-                        </label>
+                    <div id="courseName">
+                        <div id="courseLabel">
+                            <label for ="courseN">Course Name:</label>
+                        </div>
+                        <input type="text" id="courseN" name="courseN" placeholder="">
                     </div>
-                    <div id="day3">
-                        <label for ="wed">
-                            <input type="checkbox" id="wed" name="wed"><br>
-                            Wed
-                        </label>
+                    <div id="department">
+                        <div id="departmentLabel">
+                            <label for ="depart">Department:</label>
+                        </div>
+                        <input type="text" id="depart" name="depart" placeholder="">
                     </div>
-                    <div id="day4">
-                        <label for ="thurs">
-                            <input type="checkbox" id="thurs" name="thurs"><br>
-                            Thurs
-                        </label>
+                    <div id="instructor">
+                        <div id="instructorLabel">
+                            <label for ="instruct">Instructor:</label>
+                        </div>
+                        <input type="text" id="instruct" name="instruct" placeholder="">
                     </div>
-                    <div id="day5">
-                        <label for ="fri">
-                            <input type="checkbox" id="fri" name="fri"><br>
-                            Fri
-                        </label>
+                    <div id="daysOfClasses">
+                        <div class="level is-mobile mt-1">
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="mon">
+                                    <input type="checkbox" id="mon" name="mon"><br>
+                                    Mon
+                                </label>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="tues">
+                                    <input type="checkbox" id="tues" name="tues"><br>
+                                    Tues
+                                </label>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="wed">
+                                    <input type="checkbox" id="wed" name="wed"><br>
+                                    Wed
+                                </label>
+                            </div>
                     </div>
-                    <div id="day6">
-                        <label for ="sat">
-                            <input type="checkbox" id="sat" name="sat"><br>
-                            Sat
-                        </label>
+                    <div id = "daysOfClasses">
+                        <div class="level is-mobile mt-1">
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="thurs">
+                                    <input type="checkbox" id="thurs" name="thurs"><br>
+                                    Thurs
+                                </label>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="fri">
+                                    <input type="checkbox" id="fri" name="fri"><br>
+                                    Fri
+                                </label>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="sat">
+                                    <input type="checkbox" id="sat" name="sat"><br>
+                                    Sat
+                                </label>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <label class = "checkbox label" for ="sun">
+                                    <input type="checkbox" id="sun" name="sun"><br>
+                                    Sun
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div id="day7">
-                        <label for ="sun">
-                            <input type="checkbox" id="sun" name="sun"><br>
-                            Sun
-                        </label>
+                    <div id="openClasses">
+                        <input type="checkbox" id="openC" name="openC" value="openC">
+                        <label for="openC">Show Open Classes Only</label>
                     </div>
-                </div>
-                <div id="openClasses">
-                    <input type="checkbox" id="openC" name="openC" value="openC">
-                    <label for="openC">Show Open Classes Only</label>
-                </div>
-                <div id="enrollmentDeadline">
-                    <input type="checkbox" id="enrollmentD" name="enrollmentD" value="enrollmentD">
-                    <label for="enrollmentD">Enrollment Deadline has not passed</label>
+                    <div id="enrollmentDeadline">
+                        <input type="checkbox" id="enrollmentD" name="enrollmentD" value="enrollmentD">
+                        <label for="enrollmentD">Enrollment Deadline has not passed</label>
+                    </div>
                 </div>
             </div>
             <!-- Section that displays search/filter results
-             If class is not full, a "ADD" button will be displayed for that class.
-             If there are class(es) available, then each class will have an inner div
+            If class is not full, a "ADD" button will be displayed for that class.
+            If there are class(es) available, then each class will have an inner div
             -->
-            <div id="availableClasses">
-                <div class="classB">
+            <div class="container is-fluid is-flex-direction-column">
+                <div class="box is-fluid">
                     <h3 class = "classFont">CS 355 - Mark Abramov</h3>
-                    <p class = "classFont">Tuesday/Thursday 1:40pm - 2:55pm</p>
-                    <label for = "addClass1"></label>
-                    <input type="submit" id="addClass1" name="addClass1" value = "Add">
+                    <p class = "classFont">Tuesday/Thursday</p>
+                    <p class = "classFont">1:40pm - 2:55pm</p>
+                    <button class="button is-small is-pulled-right is-primary">Add</button>
                 </div>
-                <div class="classB">
+                <div class="box is-fluid">
                     <h3 class = "classFont">CS 355 - Mark Abramov</h3>
-                    <p class = "classFont">Tuesday/Thursday 3:10pm - 4:25pm</p>
-                    <label for = "addClass2"></label>
-                    <input type="submit"  id="addClass2" name="addClass2" value = "Add">
+                    <p class = "classFont">Tuesday/Thursday</p>
+                    <p class = "classFont">3:10pm - 4:25pm</p>
+                    <button class="button is-small is-pulled-right is-danger">Full</button>
                 </div>
             </div>
         </div>
