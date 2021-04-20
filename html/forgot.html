@@ -13,48 +13,51 @@
             <div id="menuBar">
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="instructorHome.html"></a><img src="../img/logo.jpg" alt="QC Logo">
+                        <a class="navbar-item" href="index.html"></a><img src="../img/logo.jpg" alt="QC Logo">
                         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"></a>
                     </div>
                 </nav>
             </div>
         </header>
 
-        <div class="is-flex">
-            <form class="box" method="POST">
-                <h2 class="title">Forgot Username</h2>
-                <div class="userEmail">
-                    <label class="label" for="fUserEmail">Email: </label>
-                    <input class="input" type="email" id="fUserEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
-                </div>
-                <div class="forgotUser">
-                    <label for = "forgotUserbtn"></label>
-                    <input class="button is-small is-rounded" type="submit" id="forgotUserbtn" name="forgotUserPass" value = "Submit">
-                </div>
-            </form>
+        <div id="grid-container">
+            <div class="is-flex">
+                <form class="box" method="POST">
+                    <h2 class="title">Forgot Username</h2>
+                    <div class="userEmail">
+                        <label class="label" for="fUserEmail">Email: </label>
+                        <input class="input" type="email" id="fUserEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
+                    </div>
+                    <div class="forgotUser">
+                        <label for = "forgotUserbtn"></label>
+                        <input class="button is-small is-rounded is-black" type="submit" id="forgotUserbtn" name="forgotUserPass" value = "Submit">
+                    </div>
+                </form>
+            </div>
+
+            <div class="is-flex">
+                <form class = "box" method="POST">
+                    <h2 class="title">Forgot Password</h2>
+                    <div class = "userEmail">
+                        <label class="label" for ="fPassEmail">Email: </label>
+                        <input class="input" type="email" id="fPassEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
+                    </div>
+                    <div class = "fUserPassword">
+                        <label class="label" for="fUserPassword">Password:</label>
+                        <input class="input" type="password" id="fUserPassword" name="userPass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+                    </div>
+                    <div class="forgotUserConfirm">
+                        <label class="label" for="fUserPasswordConfirm">Confirm Password:</label>
+                        <input class="input" type="password" id="fUserPasswordConfirm" name="userPassConfirm" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+                    </div>
+                    <div class="forgotPass">
+                        <label for = "forgotPassbtn"></label>
+                        <input class="button is-small is-rounded is-black" type="submit" id="forgotPassbtn" name="forgotUserPass" value = "Submit">
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <div class="is-flex">
-            <form class = "box" method="POST">
-                <h2 class="title">Forgot Password</h2>
-                <div class = "userEmail">
-                    <label class="label" for ="fPassEmail">Email: </label>
-                    <input class="input" type="email" id="fPassEmail" name="emailAddr" placeholder="name@example.com" pattern = "[a-zA-Z0-9-_\.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required>
-                </div>
-                <div class = "fUserPassword">
-                    <label class="label" for="fUserPassword">Password:</label>
-                    <input class="input" type="password" id="fUserPassword" name="userPass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
-                </div>
-                <div class="forgotUserConfirm">
-                    <label class="label" for="fUserPasswordConfirm">Confirm Password:</label>
-                    <input class="input" type="password" id="fUserPasswordConfirm" name="userPassConfirm" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
-                </div>
-                <div class="forgotPass">
-                    <label for = "forgotPassbtn"></label>
-                    <input class="button is-small is-rounded" type="submit" id="forgotPassbtn" name="forgotUserPass" value = "Submit">
-                </div>
-            </form>
-        </div>
         <footer class="footer">
             <div class="content has-text-centered">         
                 <p>Queens College, CUNY</p>
