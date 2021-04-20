@@ -35,35 +35,50 @@
             </div>
         </header>
 
-        <div class="flexbox-container">
-            <form>
-                <!-- Instructor's Class Schedule goes here (at most 5 or 6 classes allowed) -->
-                <h2>Class Schedule</h2>
-                <p id="courseOne">Course #1</p>
-                <p id="courseTwo">Course #2</p>
-                <p id="courseThree">Course #3</p>
-                <p id="courseFour">Course #4</p>
-                <p id="courseFive">Course #5</p>
-                <p id="courseSix">Course #6</p>
-
-
-                <!-- Add Course Button goes here - (Takes them to the Instructor enrollment page) -->
-                <div class = "addCourse">
-                    <label for = "addCourse"></label>
-                    <input type="button" id="addCourse" name="addCourse" value = "Add Course">
-                </div>
-                <!-- Drop Course Button goes here - (Clicking this button adds checkboxes next to each course) -->
-                <div class = "dropCourse">
-                    <label for = "dropCourse"></label>
-                    <input type="button" id="dropCourse" name="dropCourse" value = "Drop Course">
-                </div>
-
-                <!-- Add course button and Drop Course button both gets removed and only a "confirm drop" btn appears-->
-            </form>
+        <div class="is-flex">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Section</th>
+                        <th>Day(s)</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>CS 355</th>
+                        <th>34</th>
+                        <th>Monday, Wednesday</th>
+                        <th>1:40pm - 2:55pm</th>
+                    </tr>
+                    <tr>
+                        <th>CS 355</th>
+                        <th>33</th>
+                        <th>Monday, Wednesday</th>
+                        <th>3:10pm - 4:25pm</th>
+                    </tr>
+                    <tr>
+                        <th>CS 370</th>
+                        <th>29</th>
+                        <th>Tuesday, Thursday</th>
+                        <th>6:30pm - 7:45pm</th>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <!-- Switch image and put the image behind the schedule in the future -->
+        <!-- Add course button and Drop Course button both gets removed and only a "confirm drop" btn appears-->
+        <div class = "is-flex mt-3">
+            <div class = "addCourse">
+                <button class="button is-info is-rounded mx-1">Add Course</button>
+            </div>
+            <!-- Drop Course Button goes here - (Clicking this button adds checkboxes next to each course) -->
+            <div class = "dropCourse">
+                <button class="button is-danger is-rounded mx-1">Drop Course</button>
+            </div>
+        </div>
         <div id="images">
-            <div id="image1">
+            <div class="is-flex is-horizontal-center">
                 <img src="../img/instructorHome.jpg" alt="Instructor Home">
             </div>
         </div>
