@@ -3,84 +3,86 @@ Global styling
 */
 
 header {
-    margin: 0;
-    padding: 15px;
-    text-align: center;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
 }
 
-body{
-    height: 100%;
+body {
+  height: 100%;
 }
 
-#address, #contactInfo {
-    display: flex;
-    float: left;
-    position: relative;
-    left: -50%;
-    margin: 10px 30px 10px 30px;
+#address,
+#contactInfo {
+  display: flex;
+  float: left;
+  position: relative;
+  left: -50%;
+  margin: 10px 30px 10px 30px;
 }
 
 img {
-    padding: 10px;
+  padding: 10px;
 }
 
-/*------------------------------------------------------------------*/
+/* ------------------------------------------------------------------ */
 
 /*
 index.html styling
 */
 
 form {
-    border: 1px solid;
-    justify-content: center;
+  border: 1px solid;
+  justify-content: center;
 }
 
 .is-flex {
-    justify-content: center;
-    margin-top: 10px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .flexbox-container {
-    text-align: center;
-    display: flex;
+  text-align: center;
+  display: flex;
 }
 
 #submitBtn {
-    padding-top: 10px;
+  padding-top: 10px;
 }
+
 #grid-container {
-    display: flex;
-    justify-content: space-evenly;
-    grid-template-columns: auto auto;
+  display: flex;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto;
 }
 
-
-/*------------------------------------------------------------------*/
+/* ------------------------------------------------------------------ */
 
 /*
 studentEnroll.html
 */
 
 #sideBar {
-    border-color: black;
+  border-color: black;
 }
 
 #or p {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-#or p:before, #or p:after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid;
-    margin: auto;  
+#or p::before,
+#or p::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid;
+  margin: auto;
 }
 
-#or p:before {
-    margin-right: 10px;
+#or p::before {
+  margin-right: 10px;
 }
 
-#or p:after {
-    margin-left: 10px;
+#or p::after {
+  margin-left: 10px;
 }
