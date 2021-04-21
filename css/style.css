@@ -50,7 +50,7 @@ form {
     padding-top: 10px;
 }
 #grid-container {
-    display: grid;
+    display: flex;
     justify-content: space-evenly;
     grid-template-columns: auto auto;
 }
