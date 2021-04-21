@@ -20,12 +20,6 @@ body{
     margin: 10px 30px 10px 30px;
 }
 
-/*
-#images {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
 */
 img {
     padding: 10px;
@@ -50,15 +44,6 @@ form {
 .flexbox-container {
     text-align: center;
     display: flex;
-    /*
-    flex-wrap: wrap;
-    
-    TRY ON ALL PAGES
-    
-    justify-content: center;
-    margin:50px;
-    padding: 5px;
-    */
 }
 
 #submitBtn {
@@ -69,85 +54,6 @@ form {
     justify-content: space-evenly;
     grid-template-columns: auto auto;
 }
-
-/*
-form {
-    border: 1px solid;
-    background-color: #aaa;
-    width: 35%;
-    height: 100%;
-    gap: 10px;
-}
-
-p {
-    color: rgb(124, 125, 129);
-}
-
-h2 {
-    padding-bottom: 20px;
-    text-align: center;
-}
-/*
-label[for="email"], label[for="password"] {
-    justify-content: left;
-}
-
-input[type=text]
-
-
-#email, #password, #fullName, #userN {
-    border: 1px solid rgb(70, 88, 255);
-    display: inline-block;
-    width: 300px;
-    outline: none;
-}
-
-label, input {
-    margin: 5px;
-    border-radius: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-input[type=submit] {
-    background-color: rgb(46, 80, 255);
-    width: 200px;
-    height: 30px;
-    border: none;
-    color: white;
-    font-weight: bold;
-    margin-top: 10px
-}
-.loginConfirm{
-    margin-top: 10px;
-}
-#loginBtns{
-    width: 100%;
-}
-
-address {
-    float: left;
-    position: relative;
-    left: 50%;
-}
-
-#daysOfClasses {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
-}
-*/
-/*
-
-ADD MEDIA QUERIES FOR SHORTEN WEBPAGE
-
-    -  changes ALL inputs AND buttons sizes
-    -  changes the grey box surrounding the page size to contain all the elements in mobile form
-        - Width percentage should be > 50% at a certain screen width (try 75%)
-    -  changes font size of the button  
-
-
-*/
 
 
 /*------------------------------------------------------------------*/
@@ -179,32 +85,3 @@ studentEnroll.html
 #or p:after {
     margin-left: 10px;
 }
-/*
-#availableClasses {
-    flex: 1;
-    margin: 10px;
-    padding: 10px;
-    display: inline-flex;
-    flex-direction: column;
-}
-
-.classB {
-    width: 70%;
-    height: 30%;
-    border: 1px solid #000;
-    margin: 10px auto;
-    padding: 5px 5px;
-}
-
-.classFont {
-    font-family: Arial, serif;
-    color: black;
-    font-weight: bold;
-}
-
-#addClass1, #addClass2 {
-    width: 50px; 
-    float: right;
-    right: 0;
-}
-*/

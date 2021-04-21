@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!--
+  Name: Zian Khan, James Mancuso
+  Date: 04.20.2021
+  Section: CS 355
+
+  This is the studentEnroll.html page for our qcfirst website. This is where a studernt will have the opportunity to enroll in a course. 
+-->
 <html lang="en">
     <head>
         <meta charset = "UTF-8" content="width=device-width, initial-scale=1.0" name="viewport">
@@ -41,7 +48,7 @@
 
                     Add class "is-hidden" to the sideBar div when button clicked
                 -->
-                <div id="sideBar">
+                <div class="sideBar">
                     <div id="hideFilter">
                         <button class="button is-small is-warning mb-2">Hide Filter</button>
                     </div>
@@ -53,7 +60,7 @@
                         <p>OR</p>
                     </div>
                     <div id="semester">
-                        <div id = "searchSemester">
+                        <div id = "searchSem">
                             <label for ="searchSem">Semester:</label>
                         </div>
                         <input type="text" id="searchSem" name="searchSem" placeholder="">
@@ -80,7 +87,7 @@
                         </div>
                         <input type="text" id="instruct" name="instruct" placeholder="">
                     </div>
-                    <div id="daysOfClasses1">
+                    <div id="daysOfClasses">
                         <div class="level is-mobile mt-1">
                             <div class="level-item has-text-centered">
                                 <label class = "checkbox label" for ="mon">
@@ -101,7 +108,7 @@
                                 </label>
                             </div>
                     </div>
-                    <div id = "daysOfClasses2">
+                    <div id = "daysOfClasses">
                         <div class="level is-mobile mt-1">
                             <div class="level-item has-text-centered">
                                 <label class = "checkbox label" for ="thurs">
@@ -160,9 +167,7 @@
                 </div>
             </div>
         </div>
-
-        </div>
-        <footer class="footer">
+        <footer class="footer mt-5">
             <div class="content has-text-centered">         
                 <p>Queens College, CUNY</p>
                 <p>65-30 Kissena Blvd.</p>
