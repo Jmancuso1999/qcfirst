@@ -38,6 +38,7 @@ form {
 
 .is-flex {
     justify-content: center;
+    margin-top: 10px;
 }
 
 .flexbox-container {
