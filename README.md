@@ -9,24 +9,31 @@ You and your partner should commit and push your visual designs to your GitHub r
 <p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
 
 
+## Link to website:
+[Login Page](https://jmancuso1999.github.io/qcfirst/html/index.html) <br>
+[Student Home After Loggging In](https://jmancuso1999.github.io/qcfirst/html/studentHome.html) <br>
+[Instructor Home After Loggging In](https://jmancuso1999.github.io/qcfirst/html/instructorHome.html) <br>
+
+
 ## Contributions (Pages worked/completed)
 
 ### James 
-  - index.html   
-  - new_user.html 
-  - studentEnroll.html 
-  - new_user.js
+  - index.html  (html/css)  
+  - new_user.html  (html/css) 
+  - studentEnroll.html  (html/css)
+  - new_user.js  (js)
 
-### Zian
-  - forgot.html
-  - instructorEnroll.html
-  - instructorHome.html
-  - studentHome.html
+### Zian (It's HTML and CSS)
+  - forgot.html  (html/css)
+  - instructorEnroll.html  (html/css)
+  - instructorHome.html  (html/css)
+  - studentHome.html  (html/css)
 
 ### Both
-  - Header
-  - Footer
-  - style.css
+  - Header  (html/css)
+  - Footer  (html/css)
+  - style.css  (html/css)
+  - Implemented Bulma's CSS Framework throughout the webpage
 
 ## Login Page
 ![mobileLogin](./img/mobile/login.png)
