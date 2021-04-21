@@ -18,21 +18,22 @@ You and your partner should commit and push your visual designs to your GitHub r
 ## Contributions (Pages worked/completed)
 
 ### James 
-  - index.html   
-  - new_user.html 
-  - studentEnroll.html 
-  - new_user.js
+  - index.html  (html/css)  
+  - new_user.html  (html/css) 
+  - studentEnroll.html  (html/css)
+  - new_user.js  (js)
 
-### Zian
-  - forgot.html
-  - instructorEnroll.html
-  - instructorHome.html
-  - studentHome.html
+### Zian (It's HTML and CSS)
+  - forgot.html  (html/css)
+  - instructorEnroll.html  (html/css)
+  - instructorHome.html  (html/css)
+  - studentHome.html  (html/css)
 
 ### Both
-  - Header
-  - Footer
-  - style.css
+  - Header  (html/css)
+  - Footer  (html/css)
+  - style.css  (html/css)
+  - Implemented Bulma's CSS Framework throughout the webpage
 
 ## Login Page
 ![mobileLogin](./img/mobile/login.png)
