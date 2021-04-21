@@ -21,6 +21,7 @@ You and your partner should commit and push your visual designs to your GitHub r
   - index.html  (html/css)  
   - new_user.html  (html/css) 
   - studentEnroll.html  (html/css)
+  - instructorRoster.html (html/css)
   - new_user.js  (js)
 
 ### Zian (It's HTML and CSS)
