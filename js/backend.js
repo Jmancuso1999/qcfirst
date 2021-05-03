@@ -1,7 +1,6 @@
 const mysql = require("mysql2/promise");
 
 class backend {
-
     constructor() {
         this.connection = null;
     }
@@ -11,7 +10,7 @@ class backend {
           host: "localhost",
           port: 3406,
           user: "root",
-          password: "", //Have to find a way to encrypt the password 
+          password: "password", //Have to find a way to encrypt the password 
           database: "qcfirst",
         });
         return this.connection;
