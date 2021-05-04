@@ -43,7 +43,7 @@ app.post("/create", function(req, res) {
         fullName:req.body.fullName,
         email: req.body.emailAddr,
         password:req.body.userPass,
-        //birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
+        birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
         userType: req.body.answer
     });
     
