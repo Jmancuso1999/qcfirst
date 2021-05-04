@@ -6,14 +6,15 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 
+const { connect } = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const PORT = process.env.PORT || 3000;
 const url = "mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst";
-let db;
+var db;
 
 MongoClient.connect(url, (err, database) => {
     if(err) {
-        return console.log(err);
+        console.log(err);
     }
     console.log("server is running on 3000");
     db = database.db("qcfirst");
@@ -22,13 +23,14 @@ MongoClient.connect(url, (err, database) => {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static('view'));
 app.use(express.static('img'));
+app.use(express.static('html'));
 app.use(express.static('css'));
+app.use(express.static('js'));
 app.use('/img', express.static(__dirname + '/img'));
+app.use('/html', express.static(__dirname + '/html'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
-
 
 //Create data schema
 const userSchema = {
@@ -64,3 +66,4 @@ app.post("/create", function(req, res) {
     console.log("User Created");
     res.redirect("studentHome.html");
 })
+
