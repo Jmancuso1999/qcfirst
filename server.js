@@ -3,10 +3,15 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst", {useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst", 
+    {useNewUrlParser: true}, 
+    {useUnifiedTopology: true}, 
+    {userCreateIndex: true}
+);
 
 //Create data schema
 const userSchema = {
@@ -37,6 +42,7 @@ app.post("/", function(req, res) {
     });
     
     newUser.save();
+    console.log("User Created");
     res.redirect('/');
 })
 
