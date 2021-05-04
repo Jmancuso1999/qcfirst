@@ -6,12 +6,17 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 
+const { MongoClient } = require("mongodb");
+const url = "mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst";
 
-app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
-
+app.use(express.json());
+app.use(express.static('view'));
+app.use(express.static('img'));
+app.use(express.static('css'));
+app.use('/img', express.static(__dirname + '/img'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
 
 mongoose.connect("mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst", 
     {useNewUrlParser: true}, 
@@ -43,7 +48,7 @@ app.post("/create", function(req, res) {
         fullName:req.body.fullName,
         email: req.body.emailAddr,
         password:req.body.userPass,
-        birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
+        //birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
         userType: req.body.answer
     });
     
