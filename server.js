@@ -6,8 +6,19 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-const { MongoClient } = require("mongodb");
+const MongoClient = require('mongodb').MongoClient;
+const PORT = process.env.PORT || 3000;
 const url = "mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst";
+let db;
+
+MongoClient.connect(url, (err, database) => {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("server is running on 3000");
+    db = database.db("qcfirst");
+    app.listen(3000 , '0.0.0.0');
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -18,11 +29,6 @@ app.use('/img', express.static(__dirname + '/img'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 
-mongoose.connect("mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst", 
-    {useNewUrlParser: true}, 
-    {useUnifiedTopology: true}, 
-    {userCreateIndex: true}
-);
 
 //Create data schema
 const userSchema = {
@@ -48,16 +54,13 @@ app.post("/create", function(req, res) {
         fullName:req.body.fullName,
         email: req.body.emailAddr,
         password:req.body.userPass,
-        //birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
+        birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
         userType: req.body.answer
     });
     
-    newUser.save();
+    db.collection('users').insertOne(newUser, function(err, collection) {
+        if(err)  res.status(err.status || 500);
+    });
     console.log("User Created");
     res.redirect("studentHome.html");
-})
-
-
-app.listen(3000, function() {
-    console.log("server is running on 3000");
 })
