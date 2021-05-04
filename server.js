@@ -43,13 +43,13 @@ app.post("/create", function(req, res) {
         fullName:req.body.fullName,
         email: req.body.emailAddr,
         password:req.body.userPass,
-        birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
+        //birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
         userType: req.body.answer
     });
     
     newUser.save();
     console.log("User Created");
-    res.redirect('/html/studentHome.html');
+    res.redirect("studentHome.html");
 })
 
 
