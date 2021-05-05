@@ -108,6 +108,7 @@ app.post('/create', function(req, res) {
  * 
  * Have to make it so if the user is logged in --> send them to login page (use the req.session.loggedin)
  * 
+ * If user is logged out have them always redirected to home page
  */
 
 
