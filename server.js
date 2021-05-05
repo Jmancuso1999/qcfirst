@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const mysql = require('mysql');
 const path = require('path');
+const { response } = require("express");
 
 const db = mysql.createConnection({
 	  host     : 'sql5.freemysqlhosting.net',
@@ -34,6 +35,33 @@ db.connect((err) => {
 
 global.db = db;
 
+app.get('/', function(req, res) {
+	response.sendFile(path.join(__dirname + 'index.html'));
+});
+
+app.post('/login', function(req, res) {
+    let email = req.body['email'];
+    let password = req.body['password'];
+
+    if(email && password) {
+        var sql = `select * from User where email = ${email} and password = ${password}`;
+        db.query(sql, function(err, result) {
+            if(result.length > 0) {
+                req.session.loggedin = true;
+                req.session.email = email;
+                res.redirect('/studentHome.html');
+            }
+            else {
+                res.send('Invalid username/password.');
+            }
+        });
+    }
+    else {
+        res.send("Enter a username/password");
+        res.end();
+    }
+});
+
 app.post('/create', function(req, res) {
     let userName = req.body['userN'];
     let fullName = req.body['fullName'];
@@ -47,6 +75,7 @@ app.post('/create', function(req, res) {
     db.query(sql, function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
+        console.log("Row: " + result);
     });
 
     res.redirect("studentHome.html");
