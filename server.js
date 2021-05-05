@@ -1,13 +1,13 @@
-const express = require("express");
+var express = require("express");
 var session = require('express-session');
-const app = express();
-const bodyParser = require("body-parser");
-const mysql = require('mysql');
-const path = require('path');
+var app = express();
+var bodyParser = require("body-parser");
+var mysql = require('mysql');
+var path = require('path');
 
-const port = 3306;
+var port = 3306;
 
-const db = mysql.createConnection({
+var db = mysql.createConnection({
 	  host     : 'sql5.freemysqlhosting.net',
       port     :  3306,
 	  user     : 'sql5410319',
@@ -15,9 +15,14 @@ const db = mysql.createConnection({
 	  database : 'sql5410319'
 	});
 
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.set('port', process.env.port || port); 
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'ejs')
 app.use(express.json());
 app.use(express.static('img'));
 app.use(express.static('html'));
@@ -70,13 +75,13 @@ app.post('/login', function(req, res) {
     }
 });
 
-app.get('/home', function(request, response) {
-	if (request.session.loggedin) {
+app.get('/home', function(req, res) {
+	if (req.session.loggedin) {
 		res.redirect("studentHome.html");
 	} else {
-		response.send('Please login to view this page!');
+		res.send('Please login to view this page!');
 	}
-	response.end();
+	res.end();
 });
 
 app.post('/create', function(req, res) {
