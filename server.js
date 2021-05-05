@@ -36,23 +36,23 @@ db.connect((err) => {
 global.db = db;
 
 app.get('/', function(req, res) {
-	response.sendFile(path.join(__dirname + 'index.html'));
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 
 // Source: codeshak.io - David Adams 
 // https://codeshack.io/basic-login-system-nodejs-express-mysql/
 app.post('/login', function(req, res) {
-    let email = req.body['email'];
-    let password = req.body['password'];
+    let email = req.body.email;
+    let password = req.bodypassword;
 
     if(email && password) {
-        var sql = `select * from User where email = ${email} and password = ${password}`;
+        var sql = `select * from User where email = '${email}' and password = '${password}'`;
         db.query(sql, function(err, result) {
             if(result.length > 0) {
                 req.session.loggedin = true;
                 req.session.email = email;
-                res.redirect('/studentHome.html');
+                res.redirect('/home');
             }
             else {
                 res.send('Invalid username/password.');
@@ -65,20 +65,28 @@ app.post('/login', function(req, res) {
     }
 });
 
+app.get('/home', function(request, response) {
+	if (request.session.loggedin) {
+		res.redirect("studentHome.html");
+	} else {
+		response.send('Please login to view this page!');
+	}
+	response.end();
+});
+
 app.post('/create', function(req, res) {
-    let userName = req.body['userN'];
-    let fullName = req.body['fullName'];
-    let email = req.body['emailAddr'];
-    let password = req.body['userPass'];
-    let birthday = req.body['year'] + '-' + req.body['month'] + '-' + req.body['day'];
-    let userType = req.body['answer'];
+    let userName = req.body.userN;
+    let fullName = req.body.fullName;
+    let email = req.body.emailAddr;
+    let password = req.body.userPass;
+    let birthday = req.body.year + '-' + req.body.month + '-' + req.body.day;
+    let userType = req.body.answer;
 
     var sql = `INSERT INTO User(userName, fullName, email, password, birthday, userType) VALUES('${userName}', '${fullName}', '${email}', '${password}', '${birthday}', '${userType}')`;
 
     db.query(sql, function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
-        console.log("Row: " + result);
     });
 
     res.redirect("studentHome.html");
