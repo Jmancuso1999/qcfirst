@@ -10,9 +10,9 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 
 ## Link to website:
-[Login Page](https://jmancuso1999.github.io/qcfirst/html/index.html) <br>
-[Student Home After Loggging In](https://jmancuso1999.github.io/qcfirst/html/studentHome.html) <br>
-[Instructor Home After Loggging In](https://jmancuso1999.github.io/qcfirst/html/instructorHome.html) <br>
+[Login Page](https://qc-first.herokuapp.com/) <br>
+[Student Home After Loggging In](https://qc-first.herokuapp.com/html/studentHome.html) <br>
+[Instructor Home After Loggging In](https://qc-first.herokuapp.com/html/instructorHome.html) <br>
 
 
 ## Contributions (Pages worked/completed)
