@@ -39,6 +39,9 @@ app.get('/', function(req, res) {
 	response.sendFile(path.join(__dirname + 'index.html'));
 });
 
+
+// Source: codeshak.io - David Adams 
+// https://codeshack.io/basic-login-system-nodejs-express-mysql/
 app.post('/login', function(req, res) {
     let email = req.body['email'];
     let password = req.body['password'];
