@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 // https://codeshack.io/basic-login-system-nodejs-express-mysql/
 app.post('/login', function(req, res) {
     let email = req.body.email;
-    let password = req.bodypassword;
+    let password = req.body.password;
 
     if(email && password) {
         var sql = `select * from User where email = '${email}' and password = '${password}'`;
