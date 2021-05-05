@@ -14,7 +14,25 @@ header img{
 body {
   height: 100%;
 }
-
+#loginHome{
+  padding: 100px;
+  background-image: url("../img/forest.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+}
+footer{
+  max-width: 100%;
+  background-color: black;
+  background-image: url("../img/background-footer img 2.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
 #address,
 #contactInfo {
   display: flex;
@@ -23,6 +41,13 @@ body {
   left: -50%;
   margin: 10px 30px 10px 30px;
 }
+footer p{
+  color: black;
+}
+footer.footer.mt-4{
+  padding: 24px;
+}
+
 
 img {
   padding: 10px;
@@ -41,7 +66,7 @@ form {
 
 .is-flex {
   justify-content: center;
-  margin-top: 10px;
+  margin: auto;
 }
 
 .flexbox-container {
@@ -88,4 +113,35 @@ studentEnroll.html
 
 #or p::after {
   margin-left: 10px;
+}
+
+/*
+media queries
+*/
+@media screen and (min-width: 576px) and (max-width: 768px){
+  #loginHome {
+    padding: 175px;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  footer.footer.mt-4{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+}
+@media screen and (max-width: 575px){
+  body{
+    height: 100%;
+  }
+  #loginHome {
+    padding: 50px 25px;
+  }
+  #nonLoginBtns{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #btn1, #btn2{
+    margin-top: 5px;
+  }
 }
