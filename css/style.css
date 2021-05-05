@@ -126,7 +126,7 @@ studentEnroll.html
 /*
 media queries
 */
-@media screen and (min-width: 576px) and (max-width: 768px){
+@media screen and (min-width: 576px) and (max-width: 768px){  /* for tablets */
   #loginHome {
     padding: 175px;
     flex-direction: column;
@@ -145,7 +145,7 @@ media queries
     margin-top: 0;
   }
 }
-@media screen and (max-width: 575px){
+@media screen and (max-width: 575px){  /* for phones */
   body{
     height: 100%;
   }
