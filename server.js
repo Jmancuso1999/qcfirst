@@ -2,24 +2,16 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
-const passportLocalMongoose = require("passport-local-mongoose");
+const mysql = require('mysql');
+const path = require('path');
 
-const { connect } = require('mongodb');
-const MongoClient = require('mongodb').MongoClient;
-const PORT = process.env.PORT || 3000;
-const url = "mongodb+srv://qcfirst-admin:D3WkB9rtzMiSMfOa@qcfirst.cfs3k.mongodb.net/qcfirst";
-var db;
-
-MongoClient.connect(url, (err, database) => {
-    if(err) {
-        console.log(err);
-    }
-    console.log("server is running on 3000");
-    db = database.db("qcfirst");
-    app.listen(3000 , '0.0.0.0');
-});
+const db = mysql.createConnection({
+	  host     : 'sql5.freemysqlhosting.net',
+      port     :  3306,
+	  user     : 'sql5410319',
+	  password : 'HHEfwfsKhX',
+	  database : 'sql5410319'
+	});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -32,38 +24,35 @@ app.use('/html', express.static(__dirname + '/html'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 
-//Create data schema
-const userSchema = {
-    userName: String,
-    fullName: String,
-    email: String,
-    password: String,
-    birthday: Date,
-    userType: String
-}
 
-const user = mongoose.model("user", userSchema);
+db.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
 
-// Get new_user
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/html/new_user.html")
-})
+global.db = db;
 
-// POST new_USER
-app.post("/create", function(req, res) {
-    let newUser = new user({
-        userName: req.body.userN,
-        fullName:req.body.fullName,
-        email: req.body.emailAddr,
-        password:req.body.userPass,
-        birthday: req.body.month + "-" + req.body.day + "-" + req.body.year,
-        userType: req.body.answer
+app.post('/create', function(req, res) {
+    let userName = req.body['userN'];
+    let fullName = req.body['fullName'];
+    let email = req.body['emailAddr'];
+    let password = req.body['userPass'];
+    let birthday = req.body['year'] + '-' + req.body['month'] + '-' + req.body['day'];
+    let userType = req.body['answer'];
+
+    var sql = `INSERT INTO User(userName, fullName, email, password, birthday, userType) VALUES('${userName}', '${fullName}', '${email}', '${password}', '${birthday}', '${userType}')`;
+
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("1 record inserted");
     });
-    
-    db.collection('users').insertOne(newUser, function(err, collection) {
-        if(err)  res.status(err.status || 500);
-    });
-    console.log("User Created");
+
     res.redirect("studentHome.html");
-})
+});
 
+
+app.listen(3000, () => {
+    console.log('Server running on port: 3000');
+});
