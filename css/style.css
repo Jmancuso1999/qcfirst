@@ -152,10 +152,6 @@ media queries
   #loginHome {
     padding: 50px 25px;
   }
-  #nonLoginBtns{
-    display: flex;
-    flex-wrap: wrap;
-  }
   #btn1, #btn2{
     margin-top: 5px;
   }
