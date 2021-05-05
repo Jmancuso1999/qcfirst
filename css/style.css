@@ -115,6 +115,14 @@ studentEnroll.html
   margin-left: 10px;
 }
 
+/*Instructor Roster*/
+#rClasses {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 10px 400px;
+}
+
 /*
 media queries
 */
@@ -124,11 +132,17 @@ media queries
     flex-direction: column;
     margin-bottom: 0;
   }
-  footer.footer.mt-4{
+  form.box{
+    margin: 10px 10px;
+  }
+  div#newUserForm.is-flex{
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  footer.footer.mt-4, footer.footer.mt-5{
     margin-bottom: 0;
     margin-top: 0;
   }
-
 }
 @media screen and (max-width: 575px){
   body{
@@ -143,5 +157,14 @@ media queries
   }
   #btn1, #btn2{
     margin-top: 5px;
+  }
+  #forgotForm1, #forgotForm2{
+    margin: 0;
+  }
+  form.box{
+   margin: 10px 10px;
+  }
+  #toggleFilter{
+    display: none;
   }
 }
