@@ -2,8 +2,8 @@
 
 ## Link to website:
 [Login Page](https://qc-first.herokuapp.com/) <br>
-[Student Home After Loggging In](https://qc-first.herokuapp.com/html/studentHome.html) <br>
-[Instructor Home After Loggging In](https://qc-first.herokuapp.com/html/instructorHome.html) <br>
+[Student Home After Logging In](https://qc-first.herokuapp.com/html/studentHome.html) <br>
+[Instructor Home After Logging In](https://qc-first.herokuapp.com/html/instructorHome.html) <br>
 
 ## Designed by James Mancuso, Zian Khan
 
