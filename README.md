@@ -32,6 +32,19 @@
   - Footer  (html/css)
   - style.css  (html/css)
   - Implemented Bulma's CSS Framework throughout the webpage
+
+
+<p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
+
+## Choice of Frontend
+<p>HTML, CSS, and a CSS Framework called "Bulma"</p>
+
+## Choice of Backend
+<p>Node.js and Express</p>
+
+## Choice of Database Management System
+<p>MySQL</p>
+
 <!--
 You and your partner should commit and push your visual designs to your GitHub repository (qcfirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
 --> 
@@ -117,14 +130,4 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopEnroll](./img/desktop/instructor_1.png)
 ![desktopEnroll2](./img/desktop/instructor_2.png)
 
-<p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
-
-## Choice of Frontend
-<p>HTML, CSS, and a CSS Framework called "Bulma"</p>
-
-## Choice of Backend
-<p>Node.js and Express</p>
-
-## Choice of Database Management System
-<p>MySQL</p>
 
