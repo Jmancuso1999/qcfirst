@@ -17,7 +17,7 @@ var db = mysql.createConnection({
 
 app.use(session({
     secret: 'secret',
-    resave: true,
+    resave: false,
     saveUninitialized: true
 }));
 
@@ -47,7 +47,6 @@ app.get('/', function(req, res) {
 	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
-
 // Source: codeshak.io - David Adams 
 // https://codeshack.io/basic-login-system-nodejs-express-mysql/
 app.post('/login', function(req, res) {
@@ -62,7 +61,8 @@ app.post('/login', function(req, res) {
             if(result.length > 0) {
                 req.session.loggedin = true;
                 req.session.user = username;
-                res.redirect('/home');
+                if(result[0].userType == 'Student') res.redirect('/studentHome');
+                else res.redirect('/instructorHome');
             }
             else {
                 res.send('Invalid username/password.');
@@ -75,9 +75,18 @@ app.post('/login', function(req, res) {
     }
 });
 
-app.get('/home', function(req, res) {
+app.get('/studentHome', function(req, res) {
 	if (req.session.loggedin) {
 		res.redirect("studentHome.html");
+	} else {
+		res.send('Please login to view this page!');
+	}
+	res.end();
+});
+
+app.get('/instructorHome', function(req, res) {
+	if (req.session.loggedin) {
+		res.redirect("instructorHome.html");
 	} else {
 		res.send('Please login to view this page!');
 	}
