@@ -95,7 +95,7 @@ app.post('/create', function(req, res) {
     res.redirect("studentHome.html");
 });
 
- app.get('/studentHome', authPage(["Student"]), function(req, res) {
+ app.get('/studentHome', function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("studentHome.html");
@@ -105,7 +105,8 @@ app.post('/create', function(req, res) {
 	res.end();
 });
 
-app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
+// authPage(["Instructor"]) - add back when i find fix
+app.get('/instructorHome', function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorHome.html");
@@ -115,8 +116,7 @@ app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
 	res.end();
 });
 
-
-app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
+app.get('/studentEnroll', function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("studentEnroll.html");
@@ -127,7 +127,7 @@ app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
 });
 
 
-app.get('/instructorEnroll',authPage(["Instructor"]), function(req, res) {
+app.get('/instructorEnroll', function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorEnroll.html");
@@ -137,7 +137,7 @@ app.get('/instructorEnroll',authPage(["Instructor"]), function(req, res) {
 	res.end();
 });
 
-app.get('/instructorRoster',authPage(["Instructor"]), function(req, res) {
+app.get('/instructorRoster', function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorRoster.html");

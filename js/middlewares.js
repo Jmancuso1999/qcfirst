@@ -1,6 +1,7 @@
 const authPage = (permission) => {
     return (req, res, next) => {
         const userRole = req.body.userType;
+        console.log(userRole);
         if(permission == userRole) {
             next();
         }
