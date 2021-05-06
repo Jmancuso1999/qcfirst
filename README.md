@@ -120,8 +120,11 @@ You and your partner should commit and push your visual designs to your GitHub r
 <p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
 
 ## Choice of Frontend
+<p>HTML, CSS, and a CSS Framework called "Bulma"</p>
 
 ## Choice of Backend
+<p>Node.js and Express</p>
 
 ## Choice of Database Management System
+<p>MySQL</p>
 
