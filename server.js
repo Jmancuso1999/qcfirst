@@ -4,6 +4,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var mysql = require('mysql');
 var path = require('path');
+const {authPage} = require('./js/middlewares');
 
 var port = 3306;
 
@@ -75,23 +76,6 @@ app.post('/login', function(req, res) {
     }
 });
 
-app.get('/studentHome', function(req, res) {
-	if (req.session.loggedin) {
-		res.redirect("studentHome.html");
-	} else {
-		res.send('Please login to view this page!');
-	}
-	res.end();
-});
-
-app.get('/instructorHome', function(req, res) {
-	if (req.session.loggedin) {
-		res.redirect("instructorHome.html");
-	} else {
-		res.send('Please login to view this page!');
-	}
-	res.end();
-});
 
 app.post('/create', function(req, res) {
     let userName = req.body.userN;
@@ -111,14 +95,57 @@ app.post('/create', function(req, res) {
     res.redirect("studentHome.html");
 });
 
-/**
- * 
- * Functionality for other pages go here (GET for each page).
- * 
- * Have to make it so if the user is logged in --> send them to login page (use the req.session.loggedin)
- * 
- * If user is logged out have them always redirected to home page
- */
+ app.get('/studentHome', authPage(["Student"]), function(req, res) {
+    console.log(req.session.loggedin);
+	if (req.session.loggedin) {
+		res.redirect("studentHome.html");
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
+
+app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
+    console.log(req.session.loggedin);
+	if (req.session.loggedin) {
+		res.redirect("instructorHome.html");
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
+
+
+app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
+    console.log(req.session.loggedin);
+	if (req.session.loggedin) {
+		res.redirect("studentEnroll.html");
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
+
+
+app.get('/instructorEnroll',authPage(["Instructor"]), function(req, res) {
+    console.log(req.session.loggedin);
+	if (req.session.loggedin) {
+		res.redirect("instructorEnroll.html");
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
+
+app.get('/instructorRoster',authPage(["Instructor"]), function(req, res) {
+    console.log(req.session.loggedin);
+	if (req.session.loggedin) {
+		res.redirect("instructorRoster.html");
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
 
 
  app.listen(process.env.PORT || 3000, function(){
