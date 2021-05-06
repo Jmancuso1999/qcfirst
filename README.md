@@ -1,40 +1,44 @@
 # qcfirst
 
-## Designed by James Mancuso, Zian Khan
-
-<!--
-You and your partner should commit and push your visual designs to your GitHub repository (qcfirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
---> 
-## Purpose:
-<p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
-
-
 ## Link to website:
 [Login Page](https://qc-first.herokuapp.com/) <br>
 [Student Home After Loggging In](https://qc-first.herokuapp.com/html/studentHome.html) <br>
 [Instructor Home After Loggging In](https://qc-first.herokuapp.com/html/instructorHome.html) <br>
 
+## Designed by James Mancuso, Zian Khan
 
 ## Contributions (Pages worked/completed)
 
 ### James 
-  - index.html  (html/css)  
+  - index.html  (html)  
   - new_user.html  (html/css) 
   - studentEnroll.html  (html/css)
   - instructorRoster.html (html/css)
   - new_user.js  (js)
+  - package.json
+  - package-lock.json
+  - timer.js
 
 ### Zian (It's HTML and CSS)
+  - index.html (css)
   - forgot.html  (html/css)
   - instructorEnroll.html  (html/css)
   - instructorHome.html  (html/css)
   - studentHome.html  (html/css)
+  - responsiveness for all pages
 
 ### Both
   - Header  (html/css)
   - Footer  (html/css)
   - style.css  (html/css)
   - Implemented Bulma's CSS Framework throughout the webpage
+<!--
+You and your partner should commit and push your visual designs to your GitHub repository (qcfirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
+--> 
+<!--
+## Purpose:
+<p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
+-->
 
 ## Login Page
 ![mobileLogin](./img/mobile/login.png)
@@ -115,4 +119,9 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 <p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
 
+## Choice of Frontend
+
+## Choice of Backend
+
+## Choice of Database Management System
 
