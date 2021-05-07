@@ -92,15 +92,28 @@ app.post('/create', function(req, res) {
         console.log("1 record inserted");
     });
 
-    res.redirect("studentHome.html");
+    if(userType == 'Student') res.redirect("studentHome.html");
+    else res.redirect("instructorHome.html");
 });
 
+
+/**
+ * 
+ *  Middleware works --> But the userType is NOT returning "Student" so figure that out
+ * 
+ * Either fix it in that class or create a similar function within every GET 
+ * 
+ */
+
+// authPage(["Student"]) - add back when i find fix
  app.get('/studentHome', function(req, res) {
-    console.log(req.session.loggedin);
+    console.log("Student Home: " + req.session.loggedin);
+    console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
 		res.redirect("studentHome.html");
 	} else {
-        res.redirect("/");
+        //res.redirect("/");
+        res.send("Invalid page for user.");
 	}
 	res.end();
 });
