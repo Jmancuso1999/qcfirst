@@ -44,6 +44,13 @@ db.connect((err) => {
 
 global.db = db;
 
+/*
+app.use(function (req, res, next) {
+    if ((req.path.indexOf('html') >= 0)) {
+        res.redirect('/');
+    } 
+});
+*/
 app.get('/', function(req, res) {
 	response.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -120,7 +127,7 @@ app.post('/create', function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
     console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
-		res.redirect("studentHome.html");
+		res.sendFile(path.join(__dirname + '/studentHome.html'));
 	} else {
         //res.redirect("/");
         res.send("Invalid page for user.");
@@ -129,17 +136,17 @@ app.post('/create', function(req, res) {
 });
 
 // authPage(["Instructor"]) - add back when i find fix
-app.get('/instructorHome', function(req, res) {
+app.get('/instructorHome',authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("instructorHome.html");
+        res.sendFile(path.join(__dirname + '/instructorHome.html'));
 	} else {
         res.redirect("/");
 	}
 	res.end();
 });
 
-app.get('/studentEnroll', function(req, res) {
+app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("studentEnroll.html");
@@ -150,7 +157,7 @@ app.get('/studentEnroll', function(req, res) {
 });
 
 
-app.get('/instructorEnroll', function(req, res) {
+app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorEnroll.html");
@@ -160,7 +167,7 @@ app.get('/instructorEnroll', function(req, res) {
 	res.end();
 });
 
-app.get('/instructorRoster', function(req, res) {
+app.get('/instructorRoster',authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorRoster.html");
@@ -170,6 +177,10 @@ app.get('/instructorRoster', function(req, res) {
 	res.end();
 });
 
+
+app.get('/*', function(req, res) {
+    res.redirect('/');
+});
 
  app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
