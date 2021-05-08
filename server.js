@@ -62,6 +62,7 @@ app.post('/login', function(req, res) {
             if(result.length > 0) {
                 req.session.loggedin = true;
                 req.session.user = username;
+                req.session.answer = result[0].userType; 
                 if(result[0].userType == 'Student') res.redirect('/studentHome');
                 else res.redirect('/instructorHome');
             }
@@ -98,8 +99,8 @@ app.post('/create', function(req, res) {
         console.log("1 record inserted");
     });
 
-    if(userType == 'Student') res.redirect("studentHome.html");
-    else res.redirect("instructorHome.html");
+    if(userType == 'Student') res.redirect("/studentHome");
+    else res.redirect("/instructorHome");
 });
 
 
@@ -112,7 +113,10 @@ app.post('/create', function(req, res) {
  */
 
 // authPage(["Student"]) - add back when i find fix
- app.get('/studentHome', function(req, res) {
+
+// Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
+
+ app.get('/studentHome',authPage(["Student"]), function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
     console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
