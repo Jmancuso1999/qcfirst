@@ -18,7 +18,7 @@ var db = mysql.createConnection({
 
 app.use(session({
     secret: 'secret',
-    resave: false,
+    resave: true,
     saveUninitialized: true
 }));
 
@@ -66,7 +66,7 @@ app.post('/login', function(req, res) {
                 else res.redirect('/instructorHome');
             }
             else {
-                res.send('Invalid username/password.');
+                res.redirect("/");
             }
         });
     }
@@ -76,6 +76,12 @@ app.post('/login', function(req, res) {
     }
 });
 
+app.get('/logout', function(req, res){
+    console.log("Logging Out");
+    req.session.loggedin = false;
+    req.logout();
+    res.redirect('/');
+  });
 
 app.post('/create', function(req, res) {
     let userName = req.body.userN;
