@@ -43,7 +43,6 @@ db.connect((err) => {
 });
 
 global.db = db;
-
 /*
 app.use(function (req, res, next) {
     if ((req.path.indexOf('html') >= 0)) {
@@ -127,7 +126,7 @@ app.post('/create', function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
     console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
-		res.sendFile(path.join(__dirname + '/studentHome.html'));
+		res.redirect("studentHome.html");
 	} else {
         //res.redirect("/");
         res.send("Invalid page for user.");
@@ -136,10 +135,10 @@ app.post('/create', function(req, res) {
 });
 
 // authPage(["Instructor"]) - add back when i find fix
-app.get('/instructorHome',authPage(["Instructor"]), function(req, res) {
+app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
-        res.sendFile(path.join(__dirname + '/instructorHome.html'));
+		res.redirect("instructorHome.html");
 	} else {
         res.redirect("/");
 	}
@@ -167,7 +166,7 @@ app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
 	res.end();
 });
 
-app.get('/instructorRoster',authPage(["Instructor"]), function(req, res) {
+app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorRoster.html");
