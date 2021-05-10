@@ -43,12 +43,24 @@ db.connect((err) => {
 });
 
 global.db = db;
+
 /*
-app.use(function (req, res, next) {
-    if ((req.path.indexOf('html') >= 0)) {
-        res.redirect('/');
-    } 
-});
+Logging Out:
+
+-	Can set onclick() --> manually create a request with AJAX to send to the logout endpoint
+-	Wrap button in a tag and set href to /logout GET and which should just have the tag go to logout route
+
+Session issue:
+-	Potential FIX: Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
+-	
+
+
+Ask mark about this: You should acknowledge the user when their signup succeeded.
+-	Does he want us to redirect to the login page after successful sign up? What exactly did he mean by this?
+-	Does he want us to acknowledge them even after redirect?
+
+-	Try EJS if i need to add text to the page 
+
 */
 app.get('/', function(req, res) {
 	response.sendFile(path.join(__dirname + '/index.html'));
