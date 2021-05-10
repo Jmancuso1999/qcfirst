@@ -72,7 +72,7 @@ app.post('/login', function(req, res) {
     let username = req.body.userN;
     let password = req.body.userPass;
 
-    console.log(username + " " + password);
+    console.log("Login Page: " + username + " " + password);
 
     if(username && password) {
         var sql = `select * from User where userName = '${username}' and password = '${password}'`;
