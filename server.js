@@ -51,7 +51,7 @@ Logging Out:
 -	Wrap button in a tag and set href to /logout GET and which should just have the tag go to logout route
 
 Session issue:
--	Potential FIX: Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
+-	Potential FIX: Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well (DOESNT WORK)
 -	
 
 
@@ -60,6 +60,9 @@ Ask mark about this: You should acknowledge the user when their signup succeeded
 -	Does he want us to acknowledge them even after redirect?
 
 -	Try EJS if i need to add text to the page 
+
+- Add Courses Page: 
+- For populating the Add Courses Page --> can I just create a function that queries the database, does it need to be a GET?
 
 */
 app.get('/', function(req, res) {
@@ -117,6 +120,8 @@ app.post('/create', function(req, res) {
         console.log("1 record inserted");
     });
 
+    req.session.loggedin = true;
+    req.session.answer = req.body.answer;
     if(userType == 'Student') res.redirect("/studentHome");
     else res.redirect("/instructorHome");
 });
@@ -130,11 +135,9 @@ app.post('/create', function(req, res) {
  * 
  */
 
-// authPage(["Student"]) - add back when i find fix
 
 // Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
-
- app.get('/studentHome',authPage(["Student"]), function(req, res) {
+app.get('/studentHome', authPage(["Student"]), function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
     console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
@@ -148,7 +151,7 @@ app.post('/create', function(req, res) {
 
 // authPage(["Instructor"]) - add back when i find fix
 app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
-    console.log(req.session.loggedin);
+    console.log("Instructor Home" + req.session.loggedin);
 	if (req.session.loggedin) {
 		res.redirect("instructorHome.html");
 	} else {
