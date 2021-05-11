@@ -100,8 +100,8 @@ app.post('/login', function(req, res) {
 
 app.get('/logout', function(req, res){
     console.log("Logging Out");
+    req.session.answer = null;
     req.session.loggedin = false;
-    req.logout();
     res.redirect('/');
   });
 
@@ -139,7 +139,6 @@ app.post('/create', function(req, res) {
 // Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
 app.get('/studentHome', authPage(["Student"]), function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
-    console.log("Student info: " + req.body.userN)
 	if (req.session.loggedin) {
 		res.redirect("studentHome.html");
 	} else {
