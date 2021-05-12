@@ -26,11 +26,11 @@ app.set('port', process.env.port || port);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('img'));
-app.use(express.static('html'));
+//app.use(express.static('html'));
 app.use(express.static('css'));
 app.use(express.static('js'));
 app.use('/img', express.static(__dirname + '/img'));
-app.use('/html', express.static(__dirname + '/html'));
+//app.use('/html', express.static(__dirname + '/html'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 
@@ -45,29 +45,35 @@ db.connect((err) => {
 global.db = db;
 
 /*
-Logging Out:
-
--	Can set onclick() --> manually create a request with AJAX to send to the logout endpoint
--	Wrap button in a tag and set href to /logout GET and which should just have the tag go to logout route
-
 Session issue:
 -	Potential FIX: Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well (DOESNT WORK)
--	
 
 
 Ask mark about this: You should acknowledge the user when their signup succeeded.
--	Does he want us to redirect to the login page after successful sign up? What exactly did he mean by this?
--	Does he want us to acknowledge them even after redirect?
+-	Does he want us to acknowledge them even after redirect? YES.
+
+
 
 -	Try EJS if i need to add text to the page 
 
 - Add Courses Page: 
-- For populating the Add Courses Page --> can I just create a function that queries the database, does it need to be a GET?
+- For populating the Add Courses Page --> can I just create a function that queries the database. 
+    -Yes
 
 */
 app.get('/', function(req, res) {
-	response.sendFile(path.join(__dirname + '/index.html'));
+	res.sendFile(path.join(__dirname + '/html/index.html'));
 });
+
+
+app.get('/signup', function(req, res) {
+    res.sendFile(path.join(__dirname + '/html/new_user.html'));
+});
+
+app.get('/forgot', function(req, res) {
+    res.sendFile(path.join(__dirname + '/html/forgot.html'));
+});
+
 
 // Source: codeshak.io - David Adams 
 // https://codeshack.io/basic-login-system-nodejs-express-mysql/
@@ -88,6 +94,9 @@ app.post('/login', function(req, res) {
                 else res.redirect('/instructorHome');
             }
             else {
+                // Add HTML to user screen if password or username is incorrect 
+
+                
                 res.redirect("/");
             }
         });
@@ -127,23 +136,13 @@ app.post('/create', function(req, res) {
 });
 
 
-/**
- * 
- *  Middleware works --> But the userType is NOT returning "Student" so figure that out
- * 
- * Either fix it in that class or create a similar function within every GET 
- * 
- */
-
-
 // Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
 app.get('/studentHome', authPage(["Student"]), function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("studentHome.html");
+		return res.sendFile(path.join(__dirname + '/html/studentHome.html'));
 	} else {
-        //res.redirect("/");
-        res.send("Invalid page for user.");
+        res.redirect("/");
 	}
 	res.end();
 });
@@ -152,7 +151,7 @@ app.get('/studentHome', authPage(["Student"]), function(req, res) {
 app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
     console.log("Instructor Home" + req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("instructorHome.html");
+		return res.sendFile(path.join(__dirname + '/html/instructorHome.html'));
 	} else {
         res.redirect("/");
 	}
@@ -162,7 +161,7 @@ app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
 app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("studentEnroll.html");
+		return res.sendFile(path.join(__dirname + '/html/studentEnroll.html'));
 	} else {
         res.redirect("/");
 	}
@@ -173,7 +172,7 @@ app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
 app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("instructorEnroll.html");
+		return res.sendFile(path.join(__dirname + '/html/instructorEnroll.html'));
 	} else {
         res.redirect("/");
 	}
@@ -183,15 +182,20 @@ app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
 app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
-		res.redirect("instructorRoster.html");
+		return res.sendFile(path.join(__dirname + '/html/instructorRoster.html'));
 	} else {
         res.redirect("/");
 	}
 	res.end();
 });
 
+// Course Created Form
+// app.post("/createCourse", function(req, res) {});
 
-app.get('/*', function(req, res) {
+
+app.get('/*', function(req, res) {  
+    req.session.loggedin = false;
+    req.session.answer = null;
     res.redirect('/');
 });
 
