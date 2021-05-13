@@ -45,20 +45,16 @@ db.connect((err) => {
 global.db = db;
 
 /*
-Session issue:
--	Potential FIX: Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well (DOESNT WORK)
+BUG: FIX REDIRECT ISSUE (Stems from sessions issue with the .html) --> because I switched from redirect to send file and because i commented out the app.use above, the current program is messed up when redirecting to other pages (redirects to login screen)
 
 
-Ask mark about this: You should acknowledge the user when their signup succeeded.
--	Does he want us to acknowledge them even after redirect? YES.
-
-
-
--	Try EJS if i need to add text to the page 
-
-- Add Courses Page: 
+Complete:
+- POST request for the Create Course
+- HTML for incorrect username/password
+    - Try EJS if i need to add text to the page 
+- acknlowedge signup??? Or is redirecting fine?
 - For populating the Add Courses Page --> can I just create a function that queries the database. 
-    -Yes
+
 
 */
 app.get('/', function(req, res) {
@@ -96,7 +92,7 @@ app.post('/login', function(req, res) {
             else {
                 // Add HTML to user screen if password or username is incorrect 
 
-                
+
                 res.redirect("/");
             }
         });
@@ -190,7 +186,31 @@ app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
 });
 
 // Course Created Form
-// app.post("/createCourse", function(req, res) {});
+app.post("/createCourse", function(req, res) {
+    let courseName = req.body.courseN;
+    let department = req.body.depart;
+    let courseNumber = req.body.uniqueNum;
+
+    // Add instructor username or ID --> need for SQL purposes
+
+    let instructor = req.body.instruct;
+    let capacity = req.body.capacityNum;
+    let days = req.body.day;
+    let startTime = req.body.startTime;
+    let endTime = req.body.endTime;
+    //Add semester variable here when I create it
+    let description = req.body.classDesc;
+    let message = req.body.msg;
+
+    console.log(req.body);
+
+
+    // Course Table
+    ``
+
+    // Course_Days Table --> Iterate through the ARRAY (days) size of the variable
+
+});
 
 
 app.get('/*', function(req, res) {  
