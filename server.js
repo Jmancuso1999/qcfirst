@@ -45,10 +45,7 @@ db.connect((err) => {
 global.db = db;
 
 /*
-BUG: FIX REDIRECT ISSUE (Stems from sessions issue with the .html) --> because I switched from redirect to send file and because i commented out the app.use above, the current program is messed up when redirecting to other pages (redirects to login screen)
-
-
-Complete:
+To Complete:
 - POST request for the Create Course
 - HTML for incorrect username/password
     - Try EJS if i need to add text to the page 
