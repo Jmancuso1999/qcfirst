@@ -227,30 +227,19 @@ app.post("/createCourse", function(req, res) {
         }
     });
 
-
-    // FIX COURSE_DAYS --> Need the ID to NOT be undefined (console.log in the query shows the ID but it isnt saving)
-
     // Course_Days Table --> Iterate through the ARRAY (days) size of the variable and inserts the course we've just made into the Course_days table
     var findID = `select courseID from Course ORDER BY courseID DESC LIMIT 1`
     db.query(findID, function(err, result) {
         if(err) throw err;
-        req.session.courseID = result[0].courseID;
+        for(let i = 0; i < days.length; i++) {
+            var sql2 = `INSERT INTO Course_Days(courseID, day) VALUES('${result[0].courseID}', '${days[i]}')`;
+            db.query(sql2, function (err) {
+                if (err) throw err;
+                console.log("1 record inserted");
+            });
+        }
     });
 
-    console.log(req.session.courseID);
-   
-    for(let i = 0; i < days.length; i++) {
-        var sql2 = `INSERT INTO Course_Days(courseID, day) VALUES('${req.session.courseID}', '${days[i]}')`;
-        db.query(sql2, function (err) {
-            if (err) throw err;
-
-            // Make sure to add HTML for this if error occurs
-
-            else {
-                console.log("1 record inserted");
-            }
-        });
-    }
 
     res.redirect('/instructorHome');
 });
