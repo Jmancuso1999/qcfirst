@@ -208,7 +208,7 @@ app.post("/createCourse", function(req, res) {
     let days = req.body.day;
     let startTime = req.body.startTime;
     let endTime = req.body.endTime;
-    let semester = "Spring 2021"; // Replace with .body when fixed
+    let semester = req.body.terms;
     let enrollmentDeadline = "2022-01-01"; // Replace with .body when fixed
     let description = req.body.classDesc;
     let message = req.body.msg;
