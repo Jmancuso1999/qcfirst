@@ -53,6 +53,14 @@ To Complete:
 - For populating the Add Courses Page --> can I just create a function that queries the database. 
 
 
+- CHECK NOTES APP ON PHONE
+    - Also, need to find a way to have users and instructors schedule update automatically.
+        - IDEA: Save the userID in the session and query that userID and use DOM manipulation to add the schedule.
+                So when the user logins to req.session.userID = req.body.userID
+
+
+    - For the filter page --> I was thinking a condition that checks ALL of the filter options
+        - Google and figure this out 
 */
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/html/index.html'));
@@ -80,8 +88,10 @@ app.post('/login', function(req, res) {
         var sql = `select * from User where userName = '${username}' and password = '${password}'`;
         db.query(sql, function(err, result) {
             if(result.length > 0) {
+                console.log(result);
                 req.session.loggedin = true;
                 req.session.user = username;
+                req.session.userID = result[0].userID;
                 req.session.answer = result[0].userType; 
                 if(result[0].userType == 'Student') res.redirect('/studentHome');
                 else res.redirect('/instructorHome');
@@ -95,6 +105,9 @@ app.post('/login', function(req, res) {
         });
     }
     else {
+
+        // Add HTML to user screen if password or username is incorrect 
+
         res.send("Enter a username/password");
         res.end();
     }
@@ -185,28 +198,52 @@ app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
 // Course Created Form
 app.post("/createCourse", function(req, res) {
     let courseName = req.body.courseN;
-    let department = req.body.depart;
     let courseNumber = req.body.uniqueNum;
+    let department = req.body.depart;
 
     // Add instructor username or ID --> need for SQL purposes
+    let instructorID = req.session.userID;
 
-    let instructor = req.body.instruct;
     let capacity = req.body.capacityNum;
     let days = req.body.day;
     let startTime = req.body.startTime;
     let endTime = req.body.endTime;
+    //let enrollmentDeadline = req.body. // Add when I get working
     //Add semester variable here when I create it
     let description = req.body.classDesc;
     let message = req.body.msg;
 
-    console.log(req.body);
 
 
     // Course Table
-    ``
+    var sql1 = `INSERT INTO Course(courseName, courseNumber, department, instructorID, capacity, startTime, endTime, semester, enrollmentDeadline, description, message) VALUES('${courseName}', '${courseNumber}', '${department}', '${instructorID}', '${capacity}', '${startTime}', '${endTime}', '${description}', '${message}')`;
+    
+    db.query(sql1, function (err) {
+        if (err) throw err;
 
+        // Make sure to add HTML for this if error occurs
+
+        else {
+            console.log("1 record inserted");
+        }
+    });
+    
+    
     // Course_Days Table --> Iterate through the ARRAY (days) size of the variable
+    for(let i = 0; i < days.length; i++) {
+        var sql2 = `INSERT INTO Course_Days(instructorID, courseName, courseNumber, day) VALUES('${instructorID}', '${courseName}', '${courseNumber}', '${days[i]}')`;
+        db.query(sql2, function (err) {
+            if (err) throw err;
 
+            // Make sure to add HTML for this if error occurs
+
+            else {
+                console.log("1 record inserted");
+            }
+        });
+    }
+
+    res.redirect('/instructorHome');
 });
 
 
