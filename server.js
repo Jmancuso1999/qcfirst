@@ -155,7 +155,7 @@ app.get('/studentHome', authPage(["Student"]), function(req, res) {
 
 // authPage(["Instructor"]) - add back when i find fix
 app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
-    console.log("Instructor Home" + req.session.loggedin);
+    console.log("Instructor Home: " + req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/instructorHome.html'));
 	} else {
@@ -208,16 +208,15 @@ app.post("/createCourse", function(req, res) {
     let days = req.body.day;
     let startTime = req.body.startTime;
     let endTime = req.body.endTime;
-    //let enrollmentDeadline = req.body. // Add when I get working
-    //Add semester variable here when I create it
+    let semester = "Spring 2021"; // Replace with .body when fixed
+    let enrollmentDeadline = "2022-01-01"; // Replace with .body when fixed
     let description = req.body.classDesc;
     let message = req.body.msg;
 
-
-
     // Course Table
-    var sql1 = `INSERT INTO Course(courseName, courseNumber, department, instructorID, capacity, startTime, endTime, semester, enrollmentDeadline, description, message) VALUES('${courseName}', '${courseNumber}', '${department}', '${instructorID}', '${capacity}', '${startTime}', '${endTime}', '${description}', '${message}')`;
+    var sql1 = `INSERT INTO Course(courseName, courseNumber, department, instructorID, capacity, startTime, endTime, semester, enrollmentDeadline, description, message) VALUES('${courseName}', '${courseNumber}', '${department}', '${instructorID}', '${capacity}', '${startTime}', '${endTime}', '${semester}', '${enrollmentDeadline}', '${description}', '${message}')`;
     
+    // Obtains the LAST course (aka the course just inserted)
     db.query(sql1, function (err) {
         if (err) throw err;
 
@@ -227,11 +226,21 @@ app.post("/createCourse", function(req, res) {
             console.log("1 record inserted");
         }
     });
-    
-    
-    // Course_Days Table --> Iterate through the ARRAY (days) size of the variable
+
+
+    // FIX COURSE_DAYS --> Need the ID to NOT be undefined (console.log in the query shows the ID but it isnt saving)
+
+    // Course_Days Table --> Iterate through the ARRAY (days) size of the variable and inserts the course we've just made into the Course_days table
+    var findID = `select courseID from Course ORDER BY courseID DESC LIMIT 1`
+    db.query(findID, function(err, result) {
+        if(err) throw err;
+        req.session.courseID = result[0].courseID;
+    });
+
+    console.log(req.session.courseID);
+   
     for(let i = 0; i < days.length; i++) {
-        var sql2 = `INSERT INTO Course_Days(instructorID, courseName, courseNumber, day) VALUES('${instructorID}', '${courseName}', '${courseNumber}', '${days[i]}')`;
+        var sql2 = `INSERT INTO Course_Days(courseID, day) VALUES('${req.session.courseID}', '${days[i]}')`;
         db.query(sql2, function (err) {
             if (err) throw err;
 
