@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Name: Zian Khan, James Mancuso
+  Date: 04.20.2021
+  Section: CS 355
+
+  This is the admin.html page for our qcfirst website. This is where an admin can view the backend
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instructor Home</title>
+        <link rel="icon" href="../img/logo.jpg">
+        <link href="../css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="navbar" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/index">
+                        <img src="../img/logo.jpg" alt="QC Logo">
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu is-active">
+                    <div class="navbar-start">
+                        <a href="/studentHome" class="navbar-item">Student Home</a> &nbsp;
+                        <a href="/studentEnroll" class="navbar-item">Student Enroll</a> &nbsp;
+                        <a href="/instructorHome" class="navbar-item"> Instructor Home</a> &nbsp;
+                        <a href="/instructorEnroll" class="navbar-item" onclick="window.location.href='instructorEnroll.html'">Manage Courses</a> &nbsp;
+                        <a href="/instructorRoster" class="navbar-item" onclick="window.location.href='instructorRoster.html'">Class Roster</a>
+                        <a href="/admin" class="navbar-item" onclick="window.location.href='admin.html'">Admin Page</a>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a href = "/logout" class="button is-light" id = "logout">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>

@@ -48,19 +48,10 @@ global.db = db;
 To Complete:
 - POST request for the Create Course
 - HTML for incorrect username/password
-    - Try EJS if i need to add text to the page 
+    - Try EJS (google this) if i need to add text to the page 
 - acknlowedge signup??? Or is redirecting fine?
 - For populating the Add Courses Page --> can I just create a function that queries the database. 
 
-
-- CHECK NOTES APP ON PHONE
-    - Also, need to find a way to have users and instructors schedule update automatically.
-        - IDEA: Save the userID in the session and query that userID and use DOM manipulation to add the schedule.
-                So when the user logins to req.session.userID = req.body.userID
-
-
-    - For the filter page --> I was thinking a condition that checks ALL of the filter options
-        - Google and figure this out 
 */
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/html/index.html'));
@@ -94,7 +85,9 @@ app.post('/login', function(req, res) {
                 req.session.userID = result[0].userID;
                 req.session.answer = result[0].userType; 
                 if(result[0].userType == 'Student') res.redirect('/studentHome');
-                else res.redirect('/instructorHome');
+                else if(result[0].userType == 'Instructor') res.redirect('/instructorHome');
+                else res.redirect('/admin');
+
             }
             else {
                 // Add HTML to user screen if password or username is incorrect 
@@ -141,9 +134,7 @@ app.post('/create', function(req, res) {
     else res.redirect("/instructorHome");
 });
 
-
-// Local reroute to studentHome works but studentHome.html does not work -- test on heroku if this is the case there as well
-app.get('/studentHome', authPage(["Student"]), function(req, res) {
+app.get('/studentHome', authPage(["Student", "Admin"]), function(req, res) {
     console.log("Student Home: " + req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/studentHome.html'));
@@ -154,7 +145,7 @@ app.get('/studentHome', authPage(["Student"]), function(req, res) {
 });
 
 // authPage(["Instructor"]) - add back when i find fix
-app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
+app.get('/instructorHome', authPage(["Instructor", "Admin"]), function(req, res) {
     console.log("Instructor Home: " + req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/instructorHome.html'));
@@ -164,7 +155,7 @@ app.get('/instructorHome', authPage(["Instructor"]), function(req, res) {
 	res.end();
 });
 
-app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
+app.get('/studentEnroll', authPage(["Student", "Admin"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/studentEnroll.html'));
@@ -175,7 +166,7 @@ app.get('/studentEnroll', authPage(["Student"]), function(req, res) {
 });
 
 
-app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
+app.get('/instructorEnroll', authPage(["Instructor", "Admin"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/instructorEnroll.html'));
@@ -185,7 +176,7 @@ app.get('/instructorEnroll', authPage(["Instructor"]), function(req, res) {
 	res.end();
 });
 
-app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
+app.get('/instructorRoster', authPage(["Instructor", "Admin"]), function(req, res) {
     console.log(req.session.loggedin);
 	if (req.session.loggedin) {
 		return res.sendFile(path.join(__dirname + '/html/instructorRoster.html'));
@@ -194,6 +185,18 @@ app.get('/instructorRoster', authPage(["Instructor"]), function(req, res) {
 	}
 	res.end();
 });
+
+
+app.get('/admin', authPage(["Admin"]), function(req, res) {
+    console.log("Admin Page: " + req.session.loggedin);
+	if (req.session.loggedin) {
+		return res.sendFile(path.join(__dirname + '/html/admin.html'));
+	} else {
+        res.redirect("/");
+	}
+	res.end();
+});
+
 
 // Course Created Form
 app.post("/createCourse", function(req, res) {

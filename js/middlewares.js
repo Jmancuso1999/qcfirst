@@ -4,7 +4,7 @@ const authPage = (permission) => {
         const userRole = req.session.answer;
         console.log(userRole);
         console.log("Middleware: " + userRole + " - " + "Permission: " + permission);
-        if(permission == userRole) {
+        if(permission.includes(userRole)) {
             next();
         }
         else {
