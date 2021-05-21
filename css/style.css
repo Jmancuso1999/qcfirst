@@ -90,30 +90,6 @@ form {
 studentEnroll.html
 */
 
-#sideBar {
-  border-color: black;
-}
-
-#or p {
-  display: flex;
-  flex-direction: row;
-}
-
-#or p::before,
-#or p::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid;
-  margin: auto;
-}
-
-#or p::before {
-  margin-right: 10px;
-}
-
-#or p::after {
-  margin-left: 10px;
-}
 
 /*Instructor Roster*/
 #rClasses {

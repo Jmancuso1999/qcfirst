@@ -43,117 +43,17 @@
             </div>
         </header>
         <div id = "divider">
-            <div class="is-flex ml-2">
-                <!-- Side Bar that filters search includes: search bar, 
-                    semester, unique #, course name, department, instructor name,
-                    days of classes, and checkboxes for showing open classes only and
-                    not passing enrollment deadline
-
-                    Add class "is-hidden" to the sideBar div when button clicked
-                -->
-                <div class="sideBar">
-                    <div id="hideFilter">
-                        <button class="button is-small is-warning mb-2">Show/Hide Filter</button>
-                    </div>
-                    <div id="toggleFilter">
-                        <div id="searchBar">
-                            <label for ="search"></label>
-                            <input type="text" id="search" name="searchClass" placeholder="Search">
-                        </div>
-                        <div id="or">
-                            <p>OR</p>
-                        </div>
-                        <div id="semester">
-                            <label for="searchSemester">Semester:</label>
-                            <input type="text" id="searchSemester" name="searchSem" placeholder="">
-                        </div>
-                        <div id="uniqueNumber">
-                            <label for ="uniqueNum">Unique Number:</label>
-                            <input type="text" id="uniqueNum" name="uniqueNum" placeholder="">
-                        </div>
-                        <div id="courseName">
-                            <div id="courseLabel">
-                                <label for ="courseN">Course Name:</label>
-                            </div>
-                            <input type="text" id="courseN" name="courseN" placeholder="">
-                        </div>
-                        <div id="department">
-                            <div id="departmentLabel">
-                                <label for ="depart">Department:</label>
-                            </div>
-                            <input type="text" id="depart" name="depart" placeholder="">
-                        </div>
-                        <div id="instructor">
-                            <div id="instructorLabel">
-                                <label for ="instruct">Instructor:</label>
-                            </div>
-                            <input type="text" id="instruct" name="instruct" placeholder="">
-                        </div>
-                        <div id="daysOfClasses1">
-                            <div class="level is-mobile mt-1">
-                                <div class="level-item has-text-centered">
-                                    <label class = "checkbox label" for ="mon">
-                                        <input type="checkbox" id="mon" name="mon"><br>
-                                        Mon
-                                    </label>
-                                </div>
-                                <div class="level-item has-text-centered">
-                                    <label class = "checkbox label" for ="tues">
-                                        <input type="checkbox" id="tues" name="tues"><br>
-                                        Tues
-                                    </label>
-                                </div>
-                                <div class="level-item has-text-centered">
-                                    <label class = "checkbox label" for ="wed">
-                                        <input type="checkbox" id="wed" name="wed"><br>
-                                        Wed
-                                    </label>
-                                </div>
-                            </div>
-                            <div id = "daysOfClasses2">
-                                <div class="level is-mobile mt-1">
-                                    <div class="level-item has-text-centered">
-                                        <label class = "checkbox label" for ="thurs">
-                                            <input type="checkbox" id="thurs" name="thurs"><br>
-                                            Thurs
-                                        </label>
-                                    </div>
-                                    <div class="level-item has-text-centered">
-                                        <label class = "checkbox label" for ="fri">
-                                            <input type="checkbox" id="fri" name="fri"><br>
-                                            Fri
-                                        </label>
-                                    </div>
-                                    <div class="level-item has-text-centered">
-                                        <label class = "checkbox label" for ="sat">
-                                            <input type="checkbox" id="sat" name="sat"><br>
-                                            Sat
-                                        </label>
-                                    </div>
-                                    <div class="level-item has-text-centered">
-                                        <label class = "checkbox label" for ="sun">
-                                            <input type="checkbox" id="sun" name="sun"><br>
-                                            Sun
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="openClasses">
-                                <input type="checkbox" id="openC" name="openC" value="openC">
-                                <label for="openC">Show Open Classes Only</label>
-                            </div>
-                            <div id="enrollmentDeadline">
-                                <input type="checkbox" id="enrollmentD" name="enrollmentD" value="enrollmentD">
-                                <label for="enrollmentD">Enrollment Deadline has not passed</label>
-                            </div>
-                        </div>
-                    </div>
-            </div>
             <!-- Section that displays search/filter results
             If class is not full, a "ADD" button will be displayed for that class.
             If there are class(es) available, then each class will have an inner div
             -->
             <div class="container is-fluid is-flex-direction-column">
+                <div class="column is-half">
+                    <label class="Search"></label>
+                    <div class="control">
+                      <input class="input is-info" type="text" name="searchClass" placeholder="Search">
+                    </div>
+                </div>
                 <div class="box is-fluid">
                     <h3 class = "classFont">CS 355 - Mark Abramov</h3>
                     <p>Semester: Fall 2021</p>
