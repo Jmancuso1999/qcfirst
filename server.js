@@ -209,9 +209,12 @@ app.post("/createCourse", function(req, res) {
     let startTime = req.body.startTime;
     let endTime = req.body.endTime;
     let semester = req.body.terms;
-    let enrollmentDeadline = "2022-01-01"; // Replace with .body when fixed
+    let enrollmentDeadline = "2022-01-01"; // Replace with .body when fixed --> OR just let instructor manually insert the date 
     let description = req.body.classDesc;
     let message = req.body.msg;
+
+
+    console.log(days);
 
     // Course Table
     var sql1 = `INSERT INTO Course(courseName, courseNumber, department, instructorID, capacity, startTime, endTime, semester, enrollmentDeadline, description, message) VALUES('${courseName}', '${courseNumber}', '${department}', '${instructorID}', '${capacity}', '${startTime}', '${endTime}', '${semester}', '${enrollmentDeadline}', '${description}', '${message}')`;
@@ -244,6 +247,18 @@ app.post("/createCourse", function(req, res) {
     res.redirect('/instructorHome');
 });
 
+
+app.post("/delete", function(req, res) {
+    // Figure out which column is checked off
+
+    // Perform a for loop to iterate through all the checked off boxes and delete from database with a SQL DELETE FROM 
+
+});
+
+
+app.post("/enroll", function(req, res) {
+
+});
 
 app.get('/*', function(req, res) {  
     req.session.loggedin = false;
