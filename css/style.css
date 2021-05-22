@@ -59,7 +59,7 @@ img {
 index.html styling
 */
 
-form {
+.box {
   border: 1px solid;
   justify-content: center;
 }
