@@ -48,12 +48,24 @@
             If there are class(es) available, then each class will have an inner div
             -->
             <div class="container is-fluid is-flex-direction-column">
-                <div class="column is-half">
-                    <label class="Search"></label>
+                <div class="field has-addons">
                     <div class="control">
-                      <input class="input is-info" type="text" name="searchClass" placeholder="Search">
+                      <span class="select is-fullwidth">
+                        <select>
+                            <option>Department Name</option>
+                            <option value = "CS" name = "department">CS</option>
+                            <option value = "Math" name = "department">Math</option>
+                            <option value = "History" name = "department">History</option>
+                        </select>
+                      </span>
                     </div>
-                </div>
+                    <p class="control is-expanded">
+                      <input class="input" type="text" placeholder="Course Number" name = "number">
+                    </p>
+                    <p class="control">
+                      <a href = "/enroll" class="button is-primary">Search</a>
+                    </p>
+                  </div>
                 <div class="box is-fluid">
                     <h3 class = "classFont">CS 355 - Mark Abramov</h3>
                     <p>Semester: Fall 2021</p>
