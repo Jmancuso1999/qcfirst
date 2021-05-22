@@ -197,7 +197,6 @@ app.get('/admin', authPage(["Admin"]), function(req, res) {
 	res.end();
 });
 
-
 // Course Created Form
 app.post("/createCourse", function(req, res) {
     let courseName = req.body.courseN;
@@ -261,6 +260,25 @@ app.post("/delete", function(req, res) {
 
 app.post("/enroll", function(req, res) {
 
+});
+
+app.post("/adminDatabase", function(req, res) {
+    let sqlTable = req.body.tables;
+
+    console.log("Table: " + sqlTable);
+
+    var sql = `SELECT * FROM ${sqlTable}`
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+
+        else {
+            // Make sure to add HTML when found
+
+            console.log("Table Found");
+        }
+    });
+
+    res.redirect('/admin');
 });
 
 app.get('/*', function(req, res) {  

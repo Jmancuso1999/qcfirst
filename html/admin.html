@@ -47,3 +47,18 @@
                 </div>
             </div>
         </header>
+        <h1>Tables</h1>
+        <form class="field has-addons" action = '/adminDatabase' method="POST">
+            <div class="control">
+                <span class="select">
+                    <select name="tables" id="sqlTables" class="control">
+                        <option value = "User" name = "SQL">User</option>
+                        <option value = "User_Courses" name = "SQL">User_Courses</option>
+                        <option value = "Course" name = "SQL">Course</option>
+                        <option value = "Course_Days" name = "SQL">Course_days</option>
+                    </select>
+                </span>
+            </div>
+            <input class="button is-primary" type="submit" id="createCourseBtn" name="createNewClass" value = "Search" onclick="location.href='admin.html'">
+        </form>
+    </body>
