@@ -256,25 +256,20 @@ app.post("/delete", function(req, res) {
 
 
 app.post("/enroll", function(req, res) {
-    let userID = req.session.userID
-    let department = req.body.department;
+    let userID = req.session.userID;
+    let department = req.body.departments;
     let courseNumber = req.body.number;
 
-    var sql = `SELECT courseID FROM Course where department = ${department} and courseNumber = ${courseNumber}`;
+    console.log("userID from student enroll: " + userID);
+    console.log("department and course number: " + department + " " + courseNumber);
+
+    var sql = `SELECT * FROM Course where department = "${department}" and courseNumber = ${courseNumber}`;
 
     db.query(sql, function (err, result) {
         if (err) throw err;
 
         else {
-            console.log("Course Found");
-
-            var sql2 = `INSERT INTO User_Courses (userID, courseID) VALUES (${userID}, ${result[0].courseID})`;
-            db.query(sql2, function (err, result) {
-                if (err) throw err;
-                else {
-                    console.log("User Course Updated");
-                }
-            });
+            console.log("Course(s) Found");
         }
     });
 });
