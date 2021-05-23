@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+  Name: Zian Khan, James Mancuso
+  Date: 04.20.2021
+  Section: CS 355
+  This is the index.html page for our qcfirst website. This is where a user will login
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QCFirst Login</title>
+        <link rel="icon" href="../img/logo.jpg">
+        <link href="../css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.html">
+                        <span><img id= "logo" src="../img/logo.jpg" alt="QC Logo"></span>
+                    </a>
+                    <div class="navbar-end">
+                        <div class="navbar-item navbar-end">
+                            <div class="buttons">
+                                <a href = "/signup" class="button is-primary is-small" id="createAcct">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="is-flex" id="loginHome">
+            <form class = "box" action = '/login' method="GET">
+                <p class="title is-2">Invalid Login - Try Again</p>
+                <div id="loginBtns">
+                    <div class = "field is-grouped is-grouped-centered" id = "submitBtn">
+                        <label for = "submit"></label>
+                        <input class="button is-rounded is-fullwidth is-info" type="submit" id="submit" name="submit" value = "Login" onclick="window.location.href='/login'">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer mt-4">
+            <div class="content has-text-centered">         
+                <p>Queens College, CUNY</p>
+                <p>65-30 Kissena Blvd.</p>
+                <p>Queens, NY 11367-1597</p>
+                <p>Phone: (718) 997-5000</p>
+            </div>
+        </footer>
+    </body>
+</html>

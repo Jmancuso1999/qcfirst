@@ -1,4 +1,5 @@
 var express = require("express");
+var expressLayouts = require('express-ejs-layouts')
 var session = require('express-session');
 var app = express();
 var bodyParser = require("body-parser");
@@ -25,6 +26,7 @@ app.use(session({
 app.set('port', process.env.port || port); 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
+//app.use(expressLayouts);
 app.use(express.static('img'));
 //app.use(express.static('html'));
 app.use(express.static('css'));
@@ -67,6 +69,10 @@ app.get('/forgot', function(req, res) {
 });
 
 
+app.get('/invalid', function(req, res) {
+    res.sendFile(path.join(__dirname + '/html/invalidLogin.html'));
+});
+
 // Source: codeshak.io - David Adams 
 // https://codeshack.io/basic-login-system-nodejs-express-mysql/
 app.post('/login', function(req, res) {
@@ -91,9 +97,7 @@ app.post('/login', function(req, res) {
             }
             else {
                 // Add HTML to user screen if password or username is incorrect 
-
-
-                res.redirect("/");
+                res.redirect("/invalid");
             }
         });
     }
@@ -224,9 +228,6 @@ app.post("/createCourse", function(req, res) {
     // Obtains the LAST course (aka the course just inserted)
     db.query(sql1, function (err) {
         if (err) throw err;
-
-        // Make sure to add HTML for this if error occurs
-
         else {
             console.log("1 record inserted");
         }
@@ -259,6 +260,28 @@ app.post("/delete", function(req, res) {
 
 
 app.post("/enroll", function(req, res) {
+    let userID = req.session.userID
+    let department = req.body.department;
+    let courseNumber = req.body.number;
+
+    var sql = `SELECT courseID FROM Course where department = ${department} and courseNumber = ${courseNumber}`;
+
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+
+        else {
+            console.log("Course Found");
+
+            var sql2 = `INSERT INTO User_Courses (userID, courseID) VALUES (${userID}, ${result[0].courseID})`;
+            db.query(sql2, function (err, result) {
+                if (err) throw err;
+                else {
+                    console.log("User Course Updated");
+                }
+            });
+        }
+    });
+
 
 });
 
@@ -273,7 +296,7 @@ app.post("/adminDatabase", function(req, res) {
 
         else {
             // Make sure to add HTML when found
-
+            console.log(result);
             console.log("Table Found");
         }
     });
