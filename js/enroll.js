@@ -11,9 +11,9 @@ $(function(){ // this will be called when the DOM is ready
                     output += `<p>` + val.semester + `</p>`;
                     output += `<p>` + val.days + `</p>`;
                     output += `<p>` + val.time + `</p>`;
+                    output += `<button class="is-small is-pulled-right is-primary">` + "Add" + `</button>`;
                     output += `</div>`;
                 }
-                // <button class="button is-small is-pulled-right is-primary">Add</button>
             });
             output += `<ul>`;
             $(`#update`).html(output);
