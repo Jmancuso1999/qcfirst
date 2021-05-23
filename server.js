@@ -5,6 +5,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var mysql = require('mysql');
 var path = require('path');
+var fs = require('fs');
 const {authPage} = require('./js/middlewares');
 
 var port = 3306;
@@ -281,8 +282,6 @@ app.post("/enroll", function(req, res) {
             });
         }
     });
-
-
 });
 
 app.post("/adminDatabase", function(req, res) {
@@ -291,17 +290,28 @@ app.post("/adminDatabase", function(req, res) {
     console.log("Table: " + sqlTable);
 
     var sql = `SELECT * FROM ${sqlTable}`
-    db.query(sql, function (err, result) {
+    db.query(sql, function(err, rows, fields) {
         if (err) throw err;
-
-        else {
-            // Make sure to add HTML when found
-            console.log(result);
-            console.log("Table Found");
+        var data=[];
+        
+        for(i=0;i<rows.length;i++)
+        {
+            data.push(JSON.stringify(rows[i]));
+            console.log("Admin Test: " + JSON.stringify(rows[i]));
         }
+        
+        
+        fs.writeFile('./html/data.json', JSON.stringify(data), 'utf8', function(err){
+            if(err){ 
+                  console.log(err); 
+            } else {
+                  //Everything went OK!
+            }});
+            
+        res.end(JSON.stringify(data));
     });
 
-    res.redirect('/admin');
+    //res.redirect('/admin');
 });
 
 app.get('/*', function(req, res) {  
@@ -309,6 +319,8 @@ app.get('/*', function(req, res) {
     req.session.answer = null;
     res.redirect('/');
 });
+
+//require("./app/routes/course.routes.js")(app);
 
  app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
