@@ -103,9 +103,6 @@ app.post('/login', function(req, res) {
         });
     }
     else {
-
-        // Add HTML to user screen if password or username is incorrect 
-
         res.send("Enter a username/password");
         res.end();
     }
@@ -246,8 +243,6 @@ app.post("/createCourse", function(req, res) {
             });
         }
     });
-
-
     res.redirect('/instructorHome');
 });
 
