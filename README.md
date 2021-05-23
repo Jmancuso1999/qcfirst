@@ -129,3 +129,6 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 ## Choice of Database Management System
 <p>MySQL</p>
+
+## Difference between the our visual design and final outcome
+<p>The final outcome of our website consisted of a simipler design. We removed a few feautres (forgot username/password page, filter on the left side of the webite) and we added an admin page. In addition, because we removed the filter, we moved the search bar from the original visual design to above the courses on the student enroll page. </p>
