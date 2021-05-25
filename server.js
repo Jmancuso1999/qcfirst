@@ -32,10 +32,18 @@ app.use(express.static('img'));
 //app.use(express.static('html'));
 app.use(express.static('css'));
 app.use(express.static('js'));
+app.use(express.static('views'));
 app.use('/img', express.static(__dirname + '/img'));
 //app.use('/html', express.static(__dirname + '/html'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
+app.use('/views', express.static(__dirname + '/views'));
+
+
+// Set Templating Engine
+app.use(expressLayouts)
+app.set('layout', './layouts/full-width')
+app.set('view engine', 'ejs')
 
 
 db.connect((err) => {
@@ -263,13 +271,30 @@ app.post("/enroll", function(req, res) {
     console.log("userID from student enroll: " + userID);
     console.log("department and course number: " + department + " " + courseNumber);
 
-    var sql = `SELECT * FROM Course where department = "${department}" and courseNumber = ${courseNumber}`;
+    if(department == "Department Name") department = null;
+
+    if(department && courseNumber) {
+        var sql = `SELECT * FROM Course where department = "${department}" and courseNumber = ${courseNumber}`;
+    }
+    else if(department) {
+        var sql = `SELECT * FROM Course where department = "${department}"`;
+    }
+    else if(courseNumber) {
+        var sql = `SELECT * FROM Course where courseNumber = ${courseNumber}`;
+    }
+    else {
+        var sql = `SELECT * FROM Course`;
+    }
 
     db.query(sql, function (err, result) {
         if (err) throw err;
 
         else {
-            console.log("Course(s) Found");
+            if(result.length == 0) console.log("No Courses Found");
+            else {
+                console.log("Course(s) Found");
+                console.log(result);
+            }
         }
     });
 });
@@ -298,7 +323,7 @@ app.post("/adminDatabase", function(req, res) {
                   //Everything went OK!
             }});
             
-        res.end(JSON.stringify(data));
+        res.render('adminDatabase', {data: {query: JSON.stringify(data)}});
     });
 
     //res.redirect('/admin');
