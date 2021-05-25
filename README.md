@@ -1,4 +1,4 @@
-# qcfirst
+# QCFirst
 
 ## Link to website:
 [Login Page](https://qc-first.herokuapp.com/) <br>
@@ -19,27 +19,34 @@
   - package-lock.json
   - timer.js
   - server.js
+  - middlewares.js
 
-### Zian (It's HTML and CSS)
+### Zian
   - index.html (css)
   - forgot.html  (html/css)
   - instructorEnroll.html  (html/css)
   - instructorHome.html  (html/css)
   - studentHome.html  (html/css)
+  - images for all pages
   - responsiveness for all pages
+  - enroll.js
+  - data.json
 
 ### Both
   - Header  (html/css)
   - Footer  (html/css)
   - style.css  (html/css)
   - Implemented Bulma's CSS Framework throughout the webpage
+  - admin page (html/css)
+  - html/css validations 
+  - README.md
 
 <!--
-You and your partner should commit and push your visual designs to your GitHub repository (qcfirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
+You and your partner should commit and push your visual designs to your GitHub repository (QCFirst). You should then create a README (instructions below) including your visual designs and any other information you want to include about your site (features, contributors, purpose of the website, etc).
 --> 
 <!--
 ## Purpose:
-<p>qcfirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their shcedules and to obtain more information about courses. </p>
+<p>QCFirst was made to serve as a way for students and instructors to manage their courses (whether that included adding, dropping). Students and Instructors have the ability to view their schedules and to obtain more information about courses. </p>
 -->
 
 ## Login Page
@@ -74,7 +81,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopHome](./img/desktop/student_home.png)
 ![desktopHomeDrop](./img/desktop/student_home_drop.png)
 
-<p> Features: When a student clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button. When a student clicks the add course button, it redirects them to the student enrollment page. </p>
+<p> Features: When a student clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by re-clicking the drop courses button. When a student clicks the add course button, it redirects them to the student enrollment page. </p>
 
 <p>For the mobile version, the user has the same functionality, however, a problem we've considered is there may not be enough text space to display a students full course, so what we can is shorten the class name to display just the section and class number. (Consideration: Make it so a user can click on the class and it extends the schedule to display the rest of the information about the course).</p>
 
@@ -88,7 +95,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopInstructorHomeDrop](./img/desktop/instructor_home2.png)
 
 
-<p> Features: When a instructor clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by reclicking the drop courses button. When a instructor clicks the create course button, it redirects them to the instructor management page. </p>
+<p> Features: When a instructor clicks the drop course button, a checklist pops up which allows a user to select which courses they would like to drop. The courses they would like to drop, they would have to confirm this by re-clicking the drop courses button. When a instructor clicks the create course button, it redirects them to the instructor management page. </p>
 
 <p>For the mobile version, the user has the same functionality, however, a problem we've considered is there may not be enough text space to display a students full course, so what we can is shorten the class name to display just the section and class number. (Consideration: Make it so a user can click on the class and it extends the schedule to display the rest of the information about the course).</p>
 
@@ -106,7 +113,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 
 <p>Features: When a user wants to obtain more information about a class, they click the box that contains the class they are interested in and it'll extend to show the rest of the information about the course. When a user is able/unable to join a course, a popup will occur.</p>
 
-<p>Note: When a class is full, the add button is removed so a student wouldn't have the oppourunity to join the class.</p>
+<p>Note: When a class is full, the add button is removed so a student wouldn't have the opportunity to join the class.</p>
 
 <p>For Mobile Version: Unlike the desktop and tablet version, the user will have the chance to show/hide filter. To enable or hide the filter, the user would click the filter button. Also, the mobile will have the chance to "apply" the filter by clicking a button which will hide the filter and then display the screen of courses.</p>
 
@@ -119,7 +126,7 @@ You and your partner should commit and push your visual designs to your GitHub r
 ![desktopEnroll](./img/desktop/instructor_1.png)
 ![desktopEnroll2](./img/desktop/instructor_2.png)
 
-<p>Features: Instructors have the ability to create courses here. If the course creation is sucessful, a popup will state that the course was created sucessfully. </p>
+<p>Features: Instructors have the ability to create courses here. If the course creation is successful, a popup will state that the course was created successfully. </p>
 
 ## Choice of Frontend
 <p>HTML, CSS, and a CSS Framework called "Bulma"</p>
@@ -130,5 +137,5 @@ You and your partner should commit and push your visual designs to your GitHub r
 ## Choice of Database Management System
 <p>MySQL</p>
 
-## Difference between the our visual design and final outcome
-<p>The final outcome of our website consisted of a simipler design. We removed a few feautres (forgot username/password page, filter on the left side of the webite) and we added an admin page. In addition, because we removed the filter, we moved the search bar from the original visual design to above the courses on the student enroll page. </p>
+## Difference between our visual design and the final outcome
+<p>The final outcome of our website consisted of a simpler design. We removed a few features (forgot username/password page, filter on the left side of the website) and we added an admin page. In addition, because we removed the filter, we moved the search bar from the original visual design to above the courses on the student enroll page. </p>
