@@ -281,10 +281,12 @@ app.post("/enroll", function(req, res) {
 
     db.query(sql, function (err, result) {
         if (err) throw err;
-
         else {
-            console.log("Course(s) Found");
-            console.log(result);
+            if(result.length == 0) console.log("No Courses Found");
+            else {
+                console.log("Course(s) Found");
+                console.log(result);
+            }
         }
     });
 });
