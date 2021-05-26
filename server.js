@@ -263,13 +263,28 @@ app.post("/enroll", function(req, res) {
     console.log("userID from student enroll: " + userID);
     console.log("department and course number: " + department + " " + courseNumber);
 
-    var sql = `SELECT * FROM Course where department = "${department}" and courseNumber = ${courseNumber}`;
+    if(department == "Department Name") department = null;
+
+    if(department && courseNumber) {
+        var sql = `SELECT * FROM Course where department = "${department}" and courseNumber = ${courseNumber}`;
+    }
+    else if(department) {
+        var sql = `SELECT * FROM Course where department = "${department}"`;
+    }
+    else if(courseNumber) {
+        var sql = `SELECT * FROM Course where courseNumber = ${courseNumber}`;
+    }
+    else {
+        var sql = `SELECT * FROM Course`;
+    }
+
 
     db.query(sql, function (err, result) {
         if (err) throw err;
 
         else {
             console.log("Course(s) Found");
+            console.log(result);
         }
     });
 });
